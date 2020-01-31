@@ -2,16 +2,14 @@
 %Clean the workspace
 clear all;
 fclose('all');
-%Generate new input files;
-generate_input;
 
 %set fixed point math properties
 G = globalfimath('RoundMode','Floor','OverflowMode','Wrap');
 
 %Parameters to set: 
 %steps_number --> for angles generation
-steps_number = 13;
-frac_part = steps_number;
+steps_number = 14;
+frac_part = 13;
 %wordlength --> for fixed point length in bit of the values of x, y and angles
 wordlength = 16;
 

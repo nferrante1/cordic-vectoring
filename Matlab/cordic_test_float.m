@@ -2,8 +2,6 @@
 %Clean the workspace
 clear all
 close all
-%Generate new input files;
-generate_input;
 
 %Parameters to set: 
 %steps_number --> for angles generation

@@ -8,8 +8,8 @@ new_x = fi(x_val,1,nt.WordLength,nt.FractionLength);
 new_y = fi(y_val,1,nt.WordLength,nt.FractionLength);
 initial_phase = fi(0,1,nt.WordLength,nt.FractionLength);
 
-if( x_val < 0) % then the point is in 2nd or 3rd quadrant. (outside convergence cone)
-        if( y_val <= 0) %% then the point is in 3rd quadrant
+if( x_val < 0) % then the point is in 2nd or 3rd quadrant. (outside convergence interval)
+        if( y_val < 0) %% then the point is in 3rd quadrant
             initial_phase = fi(pi);
         else
             initial_phase = fi(-pi); %%then the point is in 2nd quadrant

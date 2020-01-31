@@ -8,3 +8,122 @@ z2
 !i10f 100
 cModel Technology
 dC:/Modeltech_pe_edu_10.4a/examples
+Ecordic
+Z0 w1580400021
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dC:/Users/ferra/Documents/Electronics/VHDL
+Z4 8C:\Users\ferra\Documents\Electronics\VHDL\cordic.vhd
+Z5 FC:\Users\ferra\Documents\Electronics\VHDL\cordic.vhd
+l0
+L4
+Vmz5e92Ea_m^_5Zk0Wh_Fe3
+!s100 iz><QFR:PgfWcg<1j9zk`3
+Z6 OP;C;10.4a;61
+32
+Z7 !s110 1580400026
+!i10b 1
+Z8 !s108 1580400026.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\ferra\Documents\Electronics\VHDL\cordic.vhd|
+Z10 !s107 C:\Users\ferra\Documents\Electronics\VHDL\cordic.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit -O0
+Z12 tExplicit 1
+Abhv
+R1
+R2
+DEx4 work 6 cordic 0 22 mz5e92Ea_m^_5Zk0Wh_Fe3
+l70
+L15
+VnCd;Afh6KbWS9nT6H8g7a3
+!s100 R1[]=4IoelfQ_30knRO_^1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ecordic_pipeline_stage
+Z13 w1580393024
+Z14 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R1
+R2
+R3
+Z15 8C:\Users\ferra\Documents\Electronics\VHDL\cordic_pipeline_stage.vhd
+Z16 FC:\Users\ferra\Documents\Electronics\VHDL\cordic_pipeline_stage.vhd
+l0
+L5
+VUd7cDmn[dI;HjCgGndnLi2
+!s100 ;C7cJ00W3KDCYU1T8And^1
+R6
+32
+Z17 !s110 1580400027
+!i10b 1
+Z18 !s108 1580400027.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\ferra\Documents\Electronics\VHDL\cordic_pipeline_stage.vhd|
+Z20 !s107 C:\Users\ferra\Documents\Electronics\VHDL\cordic_pipeline_stage.vhd|
+!i113 1
+R11
+R12
+Abhv
+R14
+R1
+R2
+Z21 DEx4 work 21 cordic_pipeline_stage 0 22 Ud7cDmn[dI;HjCgGndnLi2
+l20
+L19
+Z22 V`^_dE4?Z8B;GWB;4o?`i:3
+Z23 !s100 IkZ@Z;c41S2OYObo7R8`]2
+R6
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R11
+R12
+Epre_rotation
+Z24 w1580324402
+R1
+R2
+R3
+Z25 8C:\Users\ferra\Documents\Electronics\VHDL\pre_rotation.vhd
+Z26 FC:\Users\ferra\Documents\Electronics\VHDL\pre_rotation.vhd
+l0
+L9
+Vl9kcK2jC77e4>AkLjb5C<1
+!s100 >>?9:FbKL@Rjm4j]bLnaP1
+R6
+32
+R7
+!i10b 1
+R8
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\ferra\Documents\Electronics\VHDL\pre_rotation.vhd|
+Z28 !s107 C:\Users\ferra\Documents\Electronics\VHDL\pre_rotation.vhd|
+!i113 1
+R11
+R12
+Abhv
+R1
+R2
+DEx4 work 12 pre_rotation 0 22 l9kcK2jC77e4>AkLjb5C<1
+l23
+L21
+VGXW8line9REOLFZ8clOhL0
+!s100 B<9I>=Odj903caj6ROAJK2
+R6
+32
+R7
+!i10b 1
+R8
+R27
+R28
+!i113 1
+R11
+R12

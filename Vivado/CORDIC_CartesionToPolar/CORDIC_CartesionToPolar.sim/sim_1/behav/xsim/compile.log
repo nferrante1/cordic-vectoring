@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/ferra/Documents/Electronics/VHDL/cordic_pipeline_stage.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'cordic_pipeline_stage'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/ferra/Documents/Electronics/VHDL/pre_rotation.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'pre_rotation'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/ferra/Documents/Electronics/VHDL/cordic.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'cordic'
