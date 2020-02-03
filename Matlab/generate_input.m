@@ -6,7 +6,7 @@ close all
 
 %Paramenter to set:
 %wordlength --> for fixed point length in bit of the values of x, y and angles
-wordlength = 16;
+wordlength = 15;
 %steps_number --> for angles generation
 steps_number = 14;
 %frac_len--> for fractional length of fixed point numbers
@@ -54,6 +54,20 @@ y_file = fopen("input/y_fixed_int.in", "w");
 
 fprintf(x_file, "%d\n",x_f_int(:,:));
 fprintf(y_file, "%d\n",y_f_int(:,:));
+
+fclose(x_file);
+fclose(y_file);
+
+%Print binary representation to file
+x_file = fopen("input/x_bin.in", "w");
+y_file = fopen("input/y_bin.in", "w");
+
+for j = 1:size(x_f,2)
+for i = 1:size(x_f,1)
+fprintf(x_file, "%s\n",bin(x_f(i,j)));
+fprintf(y_file, "%s\n",bin(y_f(i,j)));
+end 
+end
 
 fclose(x_file);
 fclose(y_file);

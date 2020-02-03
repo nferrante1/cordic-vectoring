@@ -7,8 +7,8 @@ entity cordic is generic(stages: INTEGER :=14);
 		y_in:	in std_logic_vector(14 downto 0);
 		radius:	out std_logic_vector(15 downto 0);
 		phase:	out std_logic_vector(15 downto 0);
-		clk:		in std_logic;
-		rst:		in std_logic
+		clk:	in std_logic;
+		rst:	in std_logic
 	);	
 end cordic;
 
@@ -40,19 +40,7 @@ component pre_rotation is
 	);
 end component pre_rotation;
 
-signal x_MSB : std_logic;
-signal y_MSB : std_logic;
-
-signal x_ext : 	std_logic_vector(15 downto 0);
-signal y_ext : 	std_logic_vector(15 downto 0);
-
-signal phase_offset_s : std_logic_vector(15 downto 0);
 type vector_t is array(0 to stages-1) of std_logic_vector(15 downto 0);
-	
-signal x_pipeline:	vector_t;
-signal y_pipeline:	vector_t;
-signal phase_pipeline:	vector_t;
-
 constant angles : vector_t := (
 			
     "0001100100100010",
@@ -71,12 +59,44 @@ constant angles : vector_t := (
     "0000000000000001"
 );
 
+--Input for pre_rotation
+signal x_MSB : std_logic;
+signal y_MSB : std_logic;
+
+--Output of pre-rotation
+signal x_MSB_new : std_logic;
+signal y_MSB_new : std_logic;
+signal phase_offset_s : std_logic_vector(15 downto 0);
+
+--Sign Extended input for first pipeline stage
+signal x_ext : 	std_logic_vector(15 downto 0);
+signal y_ext : 	std_logic_vector(15 downto 0);
+
+
+--Array of std_logic_vector, these are the input/output for each pipeline stage 	
+signal x_pipeline:	vector_t;
+signal y_pipeline:	vector_t;
+signal phase_pipeline:	vector_t;
+
 begin
-	PRE_ROT: pre_rotation port map(x_in(14), y_in(14), x_MSB, y_MSB,  phase_offset_s, clk, rst);
-	EXT_X:	x_ext <= x_MSB & x_MSB & x_in(13 downto 0); --Sign adjustment
-	EXT_Y:	y_ext <= y_MSB & y_MSB & y_in(13 downto 0); --Sign adjustment
+--MSB of x and y input signals
+	x_MSB <= x_in(14);
+	y_MSB <= y_in(14);
+
+--Mapping of input/output signals for pre-rotation	
+	PRE_ROT: pre_rotation port map(x_MSB, y_MSB, x_MSB_new, y_MSB_new,  phase_offset_s, rst, clk);
+
+--Sign extension
+	EXT_X:	x_ext <= (x_MSB_new & x_MSB_new & x_in(13 downto 0)); 
+	EXT_Y:	y_ext <= (y_MSB_new & y_MSB_new & y_in(13 downto 0)); 
+
+--Mapping of output signals
+	OUT_PHASE: 	phase <= phase_pipeline(stages-1);
+	OUT_RADIUS:	radius <= x_pipeline(stages-1);
 	
+--Generation of pipeline stages
 	GEN: for i in 0 to (stages-1) generate
+
 		STAGE_1: if(i = 0) generate
 			CRD_1: cordic_pipeline_stage 
 			generic map(i) 
@@ -91,6 +111,7 @@ begin
 				clk,
 				rst);
 		end generate STAGE_1;
+
 		STAGE_i: if((i > 0) and  (i < stages)) generate
 			CRD_i: cordic_pipeline_stage 
 			generic map(i) 
@@ -105,7 +126,19 @@ begin
 				clk,
 				rst);
 		end generate STAGE_i;
+
 	end generate GEN;
-	OUT_PHASE: 	phase <= phase_pipeline(stages-1);
-	OUT_RADIUS:	radius <= x_pipeline(stages-1);
+	
+	--proc: process(clk)
+--	begin
+--		if(rising_edge(clk)) then
+--			if(rst = '1') then
+--				phase_pipeline <= ((others=> (others=>'0')));
+--				x_pipeline <= ((others=> (others=>'0')));
+--				y_pipeline <= ((others=> (others=>'0')));
+--				x_ext <= (others=> '0');
+--				y_ext <= (others=> '0');
+--			end if;
+--		end if;
+--	end process;
 end bhv;

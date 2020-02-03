@@ -30,12 +30,14 @@ begin
 			phase_offset(15 downto 0) <= "0000000000000000";
 		elsif(x_in = '1') then 	--With x MSB we can identify if the rotation is needed or not
 					-- We don't need to examine y's MSB to determine new MSB
-			x_out <= not x_in; 
-			y_out <= not y_in;
+			x_out <= '0'; 
+			
 			if( y_in = '1' ) then
+				y_out <= '0';
 				phase_offset(15 downto 0) <= "0110010010001000";
 				 	-- is the binary representation of pi on 16 bits fixed point numbers with 13 bits of fractional part
 			else
+				y_out <= '1';
 				phase_offset(15 downto 0) <= "1001101101111000"; 
 						-- is the binary representation of -pi on 16 bits fixed point numbers with 13 bits of fractional part
 			end if; --y if

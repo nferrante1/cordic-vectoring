@@ -24,8 +24,9 @@ begin
 			if(rst = '1') then
 				x_out(15 downto 0) <= "0000000000000000";
 				y_out(15 downto 0) <= "0000000000000000";
+				phase_out(15 downto 0) <= "0000000000000000";
 			else 
-				if(y_in(15) = '0') then
+				if(y_in(15) = '1') then
 					x_out <= std_logic_vector(signed(x_in) - (shift_right(signed(y_in), stage_number)));
 					y_out <= std_logic_vector(signed(y_in) + (shift_right(signed(x_in), stage_number)));
 					phase_out <= std_logic_vector(signed(phase_in) - signed(current_angle));
