@@ -6,7 +6,7 @@ close all
 
 %Paramenter to set:
 %wordlength --> for fixed point length in bit of the values of x, y and angles
-wordlength = 15;
+wordlength = 16;
 %steps_number --> for angles generation
 steps_number = 14;
 %frac_len--> for fractional length of fixed point numbers
