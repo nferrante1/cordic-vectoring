@@ -38,6 +38,8 @@ angles = atan(angles_generator); %Generate elementary angles
 phase_lsb = pi / 2^((in_wordlength-1)-1);
 angles_q = floor(angles./phase_lsb);
 
+pi_q = floor(pi/phase_lsb);
+pi_neg_q = floor(-pi/phase_lsb);
 a_file = fopen("input/angles_q.in", "w");
 fprintf(a_file, "%d\n",angles_q);
 fclose(a_file);

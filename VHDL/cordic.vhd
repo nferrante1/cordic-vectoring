@@ -132,18 +132,20 @@ begin
 				);
 	end generate GEN;
 	
-	STAGE_last: cordic_pipeline_stage 
-			generic map(stage_number => stages-1, wordlength => out_wordlength) 
-			port map(
-				x_in => x_pipeline(stages-1),
-				y_in => y_pipeline(stages-1),
-				x_out => radius,
-				y_out => y_end,
-				current_angle => std_logic_vector(to_signed(angles(stages-1),out_wordlength)),
-				phase_in => phase_pipeline(stages-1),
-				phase_out => phase,
-				clk => clk,
-				rst => rst
-				);
+--	STAGE_last: cordic_pipeline_stage 
+--			generic map(stage_number => stages-1, wordlength => out_wordlength) 
+--			port map(
+--				x_in => x_pipeline(stages-1),
+--				y_in => y_pipeline(stages-1),
+--				x_out => radius,
+--				y_out => y_end,
+--				current_angle => std_logic_vector(to_signed(angles(stages-1),out_wordlength)),
+--				phase_in => phase_pipeline(stages-1),
+--				phase_out => phase,
+--				clk => clk,
+--				rst => rst
+--				);
+	radius<=x_pipeline(stages-1);
+	phase<=phase_pipeline(stages-1);
 	
 end bhv;

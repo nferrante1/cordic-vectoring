@@ -24,11 +24,11 @@ function [radius, phase, x_accumulator , y_accumulator, phase_accumulator] = cor
            %Update current accumulator values applying cordic algorithm
             x_accumulator(k) = (x_accumulator_prev(k) - (floor(y_accumulator_prev(k)/(2^(k-1)))));
             y_accumulator(k) = (y_accumulator_prev(k) + (floor(x_accumulator_prev(k)/(2^(k-1)))));  
-            phase_accumulator(k) = (phase_accumulator_prev(k) - (floor(angles(k))));
+            phase_accumulator(k) = (phase_accumulator_prev(k) - (angles(k)));
         else
             x_accumulator(k) = (x_accumulator_prev(k) + (floor(y_accumulator_prev(k)/(2^(k-1)))));
             y_accumulator(k) = (y_accumulator_prev(k) - (floor(x_accumulator_prev(k)/(2^(k-1)))));  
-            phase_accumulator(k) = (phase_accumulator_prev(k) + (floor(angles(k))));
+            phase_accumulator(k) = (phase_accumulator_prev(k) + (angles(k)));
         end   
          %Update previous accumulator values for the next iteration
          x_accumulator_prev(k+1) = x_accumulator(k);

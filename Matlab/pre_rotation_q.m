@@ -6,9 +6,10 @@ new_x_q = x_q;
 new_y_q = y_q;
 initial_phase_q = 0;
 pi_q = floor(pi/in_lsb);
+pi_neg_q = floor(-pi/in_lsb);
 if( x_q < 0) % then the point is in 2nd or 3rd quadrant. (outside convergence cone)
         if( y_q < 0) %% then the point is in 3rd quadrant
-            initial_phase_q = -pi_q;
+            initial_phase_q = pi_neg_q;
         else
             initial_phase_q = pi_q; %%then the point is in 2nd quadrant
         end

@@ -18,7 +18,7 @@ architecture bhv of cordic_tb is
 	constant out_file_p 	:string  := "output/p_q.in";
 
 	constant t_clk 		:time    := 10 ns;
-	signal data_counter	:integer := -rst_time-2;
+	signal data_counter	:integer := -rst_time-1;
 	
 	signal clk      	:std_logic := '0';
 	signal rst      	:std_logic := '1';
@@ -121,7 +121,7 @@ get_data_proc: process(clk, rst)
 					
 				else --all data has been read
 				--stop after writing all values remaining in pipeline
-					eof <= '0' after (rst_time+2)*t_clk; 
+					eof <= '0' after (rst_time+1)*t_clk; 
    					file_close(fptr_x);
 					file_close(fptr_y);
 					file_close(fptr_x);

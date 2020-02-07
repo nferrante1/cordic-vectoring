@@ -9,6 +9,9 @@ file = fopen("output/p_q.in");
 phase_vhdl = fscanf(file, "%d", size(x_q));
 fclose(file);
 
+qp_error = phase_q - phase_vhdl;
+qr_error = radius_q - radius_vhdl;
+
 phase_vhdl = phase_vhdl * phase_lsb;
 radius_vhdl = radius_vhdl * in_lsb;
 corrected_radius_vhdl = radius./gain;
