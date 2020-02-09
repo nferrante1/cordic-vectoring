@@ -1,27 +1,24 @@
-function [radius, phase] = cordic_vectoring_float(x_val,y_val, steps_number)
+function [radius, phase, x_accumulator, y_accumulator, phase_accumulator] = cordic_vectoring_float(x_val,y_val, initial_phase, steps_number)
 %CORDIC_VECTORING_FLOAT CORDIC Vectoring mode implementation with floating  
 % point numbers
-% x_val and y_val are input values, representing a point on the cartesian
-% plane.
-% steps_number represent the number of steps performed by cordic to
-% determine the result. Remember that cordic converge with 1 bit of
-% precision per step (k bit of precision --> k steps)
+% x_val and y_val represent a point on the cartesian plane.
+%radius and phase represent the corresponding polar conversion 
+
   
     %Accumulate successive iterations partial results
     %Current iteration
     x_accumulator(1:steps_number) = x_val;
     y_accumulator(1:steps_number) = y_val;
-    phase_accumulator(1:steps_number) = 0;
+    phase_accumulator(1:steps_number) = initial_phase;
    
     %Previous iteration
     x_accumulator_prev(1:steps_number) = x_val;
     y_accumulator_prev(1:steps_number) = y_val;
-    phase_accumulator_prev(1:steps_number) = 0;
-    
-    %generate angles vector
-    angle_file = fopen("input/angles_float.in","r");
-    angles = fscanf(angle_file, "%f");
-    fclose(angle_file);
+    phase_accumulator_prev(1:steps_number) = initial_phase;
+   
+    %Compute angles
+        angles_generator = 1./(2.^(0:1:steps_number-1));
+        angles = atan(angles_generator); %Generate elementary angles
    
     k = 1;
    

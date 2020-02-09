@@ -2,19 +2,27 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
+--This is the main module, which contains pre_rotation and all the pipeline_stage modules
+--Generic parameters are:
+	--stages: Number of stages for the pipeline, in other words is the number of iterations of the algorithm
+	--in_wordlength needed for input dimensioning
+	--out_worldlength needed for output dimensioning and pipeline_stages in/out dimensioning
 entity cordic is generic(stages: INTEGER:= 13; in_wordlength : INTEGER:=16; out_wordlength : INTEGER:=20);
 	port(
+		--input x,y
 		x_in:	in std_logic_vector(in_wordlength-1 downto 0);
 		y_in:	in std_logic_vector(in_wordlength-1 downto 0);
+		--output radius, phase
 		radius:	out std_logic_vector(out_wordlength-1 downto 0);
 		phase:	out std_logic_vector(out_wordlength-1 downto 0);
+		--clock and reset signals
 		clk:	in std_logic;
-		rst:	in std_logic
+		rst:	in std_logic --active high
 	);	
 end cordic;
 
 architecture bhv of cordic is
-
+--Needed components
 component cordic_pipeline_stage is generic(stage_number : INTEGER; wordlength : INTEGER);
 	port(
 		x_in:		in std_logic_vector(wordlength - 1 downto 0);
@@ -41,6 +49,7 @@ component pre_rotation is generic (in_wordlength : INTEGER; out_wordlength : INT
 	);
 end component pre_rotation;
 
+--This type is needed for driving the elementary angles signals towards the pipeline stages
 type angles_t is array(0 to stages-1) of integer;
 constant angles : angles_t := (
 				4096,
@@ -58,16 +67,13 @@ constant angles : angles_t := (
 				1
 				);
 
---Input for pre_rotation
---signal x_MSB : std_logic;
---signal y_MSB : std_logic;
+--Needed to drive output values of a module towards other modules 
+signal phase_offset_s : std_logic_vector(out_wordlength - 1 downto 0); --phase offset: 
+									--out of pre_rotation
+									--in of first pipeline_stage
+signal y_end	: std_logic_vector(out_wordlength - 1 downto 0); --Final y (will be thrown away)
+signal phase_s	: std_logic_vector(out_wordlength - 1 downto 0); --final phase
 
---Output of pre-rotation
---signal x_MSB_new : std_logic;
---signal y_MSB_new : std_logic;
-signal phase_offset_s : std_logic_vector(out_wordlength - 1 downto 0);
-signal y_end	: std_logic_vector(out_wordlength - 1 downto 0);
-signal phase_s	: std_logic_vector(out_wordlength - 1 downto 0);
 --Sign Extended input for first pipeline stage
 signal x_ext : 	std_logic_vector(out_wordlength - 1 downto 0);
 signal y_ext : 	std_logic_vector(out_wordlength - 1 downto 0);
@@ -81,13 +87,8 @@ signal phase_pipeline:		vector_t;
 
 
 begin
-----Sign extension
---		EXT_X:	x_ext(out_wordlength - 1 downto in_wordlength -1)<= (others => x_MSB_new);
---			x_ext(in_wordlength - 2 downto 0) <= x_in(in_wordlength - 2 downto 0);
---		EXT_Y:	y_ext(out_wordlength - 1 downto in_wordlength -1)<= (others => y_MSB_new);
---			y_ext(in_wordlength - 2 downto 0) <= y_in(in_wordlength - 2 downto 0);
 
---Mapping of input/output signals for pre-rotation	
+--Mapping for pre-rotation	
 	PRE_ROT: pre_rotation 
 		generic map(in_wordlength, out_wordlength)
 		 port map(
@@ -99,8 +100,8 @@ begin
 				rst => rst,
 				clk => clk
 				);	
-
-		STAGE_1: cordic_pipeline_stage 
+--Mapping for first pipeline stage
+		STAGE_0: cordic_pipeline_stage 
 			generic map(stage_number => 0, wordlength => out_wordlength) 
 			port map(
 				x_in => x_ext,
@@ -114,7 +115,7 @@ begin
 				rst => rst
 				);
 	
---Generation of pipeline stages
+--Mapping of others pipeline stages
 	GEN: for i in 1 to (stages-1) generate
 		
 		STAGE: cordic_pipeline_stage 
@@ -132,20 +133,18 @@ begin
 				);
 	end generate GEN;
 	
---	STAGE_last: cordic_pipeline_stage 
---			generic map(stage_number => stages-1, wordlength => out_wordlength) 
---			port map(
---				x_in => x_pipeline(stages-1),
---				y_in => y_pipeline(stages-1),
---				x_out => radius,
---				y_out => y_end,
---				current_angle => std_logic_vector(to_signed(angles(stages-1),out_wordlength)),
---				phase_in => phase_pipeline(stages-1),
---				phase_out => phase,
---				clk => clk,
---				rst => rst
---				);
 	radius<=x_pipeline(stages-1);
+--The output radius of these cordic implementation is affected by a gain.
+--If we want to remove this gain we can simply add a multiplier and multiply
+--the last x_pipeline value by a fixed factor inv_gain:
+		
+	--radius<=std_logic_vector(signed(x_pipeline(stages-1)) * signed(inv_gain));
+
+--The choice of not using such multiplication has been done becouse a multiplier
+--has an high area occupancy and power consumption, and CORDIC is generally used in
+--constrained devices.
+	
 	phase<=phase_pipeline(stages-1);
+
 	
 end bhv;
