@@ -29,3 +29,8 @@ MSE_phase_vhdl = sqrt(mean((compare_phase - phase_vhdl).^2));
 %root squared errors
 error_radius_vhdl = sqrt((compare_radius - corrected_radius_vhdl).^2);
 error_phase_vhdl = sqrt((compare_phase - phase_vhdl).^2);
+
+%difference between errors in matlab and vhdl, for model goodness
+%verification
+quantized2vhdl_error_radius = error_radius - error_radius_vhdl;
+quantized2vhdl_error_phase = error_phase - error_phase_vhdl;
