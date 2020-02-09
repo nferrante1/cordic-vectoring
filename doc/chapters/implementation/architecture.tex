@@ -14,28 +14,39 @@ two 16 bit words (x and y coordinates), clock and reset. The inputs are supposed
 to be the quantization of normalized real world values in the range \[-1, 1\]. 
 The outputs are two 20 bit words, the phase and the module.
 
-\subsubsection{Pre-Rotation Module}
 Inside the container module we have two distinct types of submodule, a
-Pre-Rotation module, which has as input the x and y values and as output the
-extended and rotated. This module will perform the preprocessing needed to make
-the algorithm converge. As we know CORDIC algorithm's convergence is guaranteed
-if the inputs are in the first or the fourth quadrant of the cartesian plane.
+Pre-Rotation module, and many Pipeline Stage modules.
+
+\subsubsection{Pre-Rotation Module}
+This module has as input the x and y values on 16 bits and as 
+output the extended and rotated values and the initial phase offset, which can
+be 0, \pi or -\pi. 
+This module will perform preprocessing needed to make the algorithm converge. 
+As we know CORDIC algorithm's convergence is guaranteed if the inputs are in the 
+first or the fourth quadrant of the cartesian plane.
 This because the values for the rotations performed by the algorithm are fixed
 and the sum of this angles converges
 
-sum_(n=0)^∞ tan^(-1)(1/2^n) = 1.7423...
-
-That is almost  pi/2 in radians.
-
 The output is extended on 20 bits becouse we have to take in account the bit
 growth in the pipeline that will be of ceil(log2(n_iterations)).
+
+The initial phase offset has been dimensioned on 20 bit too for the same
+reasons of x and y. Note that in this case we don't have a real input on 16 bit
+for the phase, but we have done the quantization of the phase using 16 bits, so
+that the bit growth can be handled in the same way of x and y.
 
 The choice of the number of iterations has been done looking at the result of
 the quantization of the angles. Values smaller then 2^-12 are quantized to zero,
 thus steps after the 13th  will not have any influence on the output phase.
 
 \subsubsection{Pipeline Stage}
-
+The other submodule type we can find inside the main module is the Pipeline
+Stage. This submodule performs the core of the CORDIC algorithm, it has
+as input three 20 bit words x_i, y_i, and phase_i and as output again three 20
+bit words x_(i+1), y_(i+1) and phase(i+1). The output of each stage will be the
+input of the next one, the first stage will take as input the output of
+Pre-Rotation module, the last one's output will be used as output of the main
+module, using x_last as radius and phase_last as phase, y_last is not used. 
 
 
 

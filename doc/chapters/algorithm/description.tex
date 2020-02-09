@@ -1,0 +1,19 @@
+\section{Description}
+CORDIC (COordinate Rotation Digital Computer), known also as Volder's algorithm
+is a simple and hardware-efficient iterative algorithm used to compute a wide
+range of elementary, trigonometric and hyperbolic functions. \newline
+It was conceived by Jack E. Volder in 1956 as an accurate and performant
+real-time digital replacement for B-58 Bomber's analog resolver.\newline
+CORDIC idea is to translate complex operations in vectors' rotations that can be
+efficiently implemented in hardware as shift and add operations.
+
+\subsection{Mathematical Background}
+Vector's rotation is the basis of CORDIC algorithm. Let's suppose to have an
+input vector $(x_0, y_0)$ and that we want to rotate it of an arbitrary angle 
+$\theta$. Suppose that we choose the origin as the center of the rotation, so we
+can compute the rotated vector as: \newline
+$\left.\begin{gathered}
+	x_1 &= x_0cos\theta - y_0sin\theta \\
+	y_1 &= x_0sin\theta + y_0cos\theta 
+	\end{gathered}
+\right\}$
