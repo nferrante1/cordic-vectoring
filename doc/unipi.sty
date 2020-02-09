@@ -17,11 +17,14 @@
 \RequirePackage{graphicx}
 \RequirePackage{titlesec}
 % TODO: add option to enable/disable caption formatting
-\RequirePackage[font=small,labelfont=bf]{caption}
+\RequirePackage[font=small,labelfont=bf,position=bottom]{caption}
 \RequirePackage{amsmath}
+\RequirePackage{interval}
 \RequirePackage{array}
 \RequirePackage{makecell}
+\RequirePackage[inline]{enumitem}
 \RequirePackage{listings}
+\RequirePackage{nameref}
 \RequirePackage[english]{varioref}
 % TODO: control biblatex options with this package options
 \RequirePackage[hyperref=true,
@@ -43,6 +46,7 @@
 \def\@academicyear{}
 \def\@author{}
 \def\@authors{}
+\def\@institute{}
 \def\@class{}
 \def\@course{}
 \def\@subtitle{}
@@ -50,6 +54,7 @@
 
 \def\academicyear#1{\gdef\@academicyear{#1}}
 \def\authors#1{\gdef\@authors{#1}}
+\def\institute#1{\gdef\@institute{#1}}
 \def\class#1{\gdef\@class{#1}}
 \def\course#1{\gdef\@course{#1}}
 \def\subtitle#1{\gdef\@subtitle{#1}}
@@ -115,7 +120,11 @@
 \definecolor{codeblack}{rgb}{0.0,0.0,0.0}
 \definecolor{bgcolor}{rgb}{0.95,0.95,0.92}
 
-\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hspace{20pt}\textcolor{gray75}{|}\hspace{20pt}}{0pt}{\Huge\bfseries}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hspace{20pt}\textcolor{gray75}{|}}{20pt}{}
+\let\appendix@original\appendix
+\renewcommand{\appendix}{\appendix@original\titleformat{\chapter}[display]{\Huge\bfseries}{Appendix~\thechapter}{20pt}{}}
+
+\intervalconfig{soft open fences}
 
 \newcommand\code{\texttt}
 \newcommand\standout{\textbf}
@@ -124,6 +133,18 @@
 \WithSuffix\newcommand\idest*[1]{i.e.\ #1}
 \newcommand\exgratia[1]{(e.g.\ #1)}
 \WithSuffix\newcommand\exgratia*[1]{e.g.\ #1}
+\newcommand\etc{etc\textellipsis}
+\newcommand\vivado{\specialname{Xilinx Vivado}}
+\newcommand\modelsim{\specialname{ModelSIM}}
+\newcommand\matlab{\specialname{Matlab}}
+\newcommand\cordic{\texttt{CORDIC}}
+
+\newcommand\chref[1]{Chapter~\ref{#1}\space\enquote{\nameref{#1}}}
+\newcommand\secref[1]{Section~\ref{#1}\space\enquote{\nameref{#1}}}
+\newcommand\figref[1]{Figure~\ref{#1}}
+\newcommand\appendixref[1]{Appendix~\ref{#1}\space\enquote{\nameref{#1}}}
+\let\eqref@original\eqref
+\renewcommand{\eqref}[1]{Equation~\eqref@original{#1}}
 
 \renewcommand\theadalign{bl}
 \renewcommand\theadfont{\bfseries}
@@ -132,49 +153,12 @@
 \newcommand\theacademicyear{\@academicyear}
 \newcommand\theauthor{\@author}
 \newcommand\theauthors{\@authors}
+\newcommand\theinstitute{\@institute}
 \newcommand\theclass{\@class}
 \newcommand\thecourse{\@course}
 \newcommand\thesubtitle{\@subtitle}
 \newcommand\thetitle{\@title}
 
-\lstdefinestyle{javacode}{%
-	backgroundcolor=\color{bgcolor},
-	commentstyle=\color{codegreen},
-	keywordstyle=\bfseries\color{codeorange},
-	numberstyle=\tiny\color{codegray},
-	stringstyle=\color{codepurple},
-	basicstyle=\ttfamily\footnotesize,
-	breakatwhitespace=false,
-	breaklines=true,
-	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
-	captionpos=b,
-	keepspaces=true,
-	numbers=left,
-	numbersep=5pt,
-	showspaces=false,
-	showstringspaces=false,
-	showtabs=false,
-	tabsize=2
-}
-\lstdefinestyle{xmlcode}{%
-	backgroundcolor=\color{bgcolor},
-	commentstyle=\color{codegray},
-	keywordstyle=\color{codeblack},
-	numberstyle=\tiny\color{codegray},
-	stringstyle=\color{codeblack},
-	basicstyle=\ttfamily\footnotesize,
-	breakatwhitespace=false,
-	breaklines=true,
-	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
-	captionpos=b,
-	keepspaces=true,
-	numbers=left,
-	numbersep=5pt,
-	showspaces=false,
-	showstringspaces=false,
-	showtabs=false,
-	tabsize=2
-}
-\lstset{style=javacode}
+\institute{University of Pisa}
 
 \endinput
