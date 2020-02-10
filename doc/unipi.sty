@@ -40,7 +40,7 @@
 % TODO: add options to specify other paths
 \def\input@path{{./chapters/}}
 \graphicspath{{./img/}}
-\lstset{inputpath=./listings/}
+\lstset{inputpath=./../}
 \addbibresource{bibliography.bib}
 
 \def\@academicyear{}
@@ -112,13 +112,9 @@
 \AtBeginEnvironment{verbatim}{\microtypesetup{activate=false}}
 
 \definecolor{gray75}{gray}{0.75}
-
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codeorange}{rgb}{0.95,0.45,0.1}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{codeblack}{rgb}{0.0,0.0,0.0}
-\definecolor{bgcolor}{rgb}{0.95,0.95,0.92}
+\definecolor{bgcolor}{HTML}{EEEEEE}
+\colorlet{keyword}{blue!100!black!80}
+\colorlet{comment}{green!70!black!90}
 
 \titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hspace{20pt}\textcolor{gray75}{|}}{20pt}{}
 \let\appendix@original\appendix
@@ -149,6 +145,32 @@
 \renewcommand\theadalign{bl}
 \renewcommand\theadfont{\bfseries}
 \renewcommand{\cellalign}{l}
+
+\lstdefinestyle{vhdlcode}{
+	basicstyle   = \ttfamily,
+	keywordstyle = \color{keyword}\bfseries,
+	commentstyle = \color{comment},
+	backgroundcolor = \color{bgcolor},
+	numberstyle=\tiny\color{gray75},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	postbreak=\mbox{\textcolor{red}{\(\hookrightarrow\)}\space},
+	captionpos=b,
+	tabsize=2,
+	numbers=left,
+	numbersep=5pt
+}
+
+\lstdefinelanguage{vhdl}{
+	morekeywords={
+		library,use,all,entity,is,port,in,out,end,architecture,of,
+		begin,and
+	},
+	morecomment=[l]--,
+	style=vhdlcode
+}
+
 
 \newcommand\theacademicyear{\@academicyear}
 \newcommand\theauthor{\@author}
