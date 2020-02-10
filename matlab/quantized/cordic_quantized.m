@@ -6,10 +6,10 @@ close all;
 input_dir = "input";
 output_dir = "output";
 if ~exist(input_dir, 'dir')
-    mkdir(input_dir)
+	mkdir(input_dir)
 end
 if ~exist(output_dir, 'dir')
-    mkdir(output_dir)
+	mkdir(output_dir)
 end
 
 %-------------Paramenters to set-------------------------------------------
@@ -17,7 +17,7 @@ end
 in_wordlength = 16;
 
 % steps --> number of steps for cordic
-steps = 13; 
+steps = 13;
 % We choose 13 because the elementary angles, when quantized, are 0 after
 % the 13th value (2^-12 --> 1, 2^-13 --> 0). So with 16 bit inputs 13 steps
 % of cordic are sufficient

@@ -6,10 +6,10 @@ close all;
 input_dir = "input";
 output_dir = "output";
 if ~exist(input_dir, 'dir')
-    mkdir(input_dir)
+	mkdir(input_dir)
 end
 if ~exist(output_dir, 'dir')
-    mkdir(output_dir)
+	mkdir(output_dir)
 end
 
 %-------------Paramenters to set-------------------------------------------

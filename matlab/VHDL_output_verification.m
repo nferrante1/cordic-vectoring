@@ -4,7 +4,7 @@
 
 output_dir = "output";
 if ~exist(output_dir, 'dir')
-    mkdir(output_dir)
+	mkdir(output_dir)
 end
 
 % Read vhdl output from file
