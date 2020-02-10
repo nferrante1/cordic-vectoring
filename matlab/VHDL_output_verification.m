@@ -21,7 +21,7 @@ fclose(file);
 phase_vhdl = phase_vhdl * phase_lsb;
 radius_vhdl = radius_vhdl * in_lsb;
 % Correct the radius dividing by the gain
-corrected_radius_vhdl = radius./gain;
+corrected_radius_vhdl = radius_vhdl./gain;
 
 % Compute mean square error
 MSE_radius_vhdl = sqrt(mean((compare_radius - corrected_radius_vhdl).^2, "all"));
