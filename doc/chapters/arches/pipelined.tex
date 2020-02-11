@@ -1,1 +1,8 @@
 \section{Pipelined}\label{sec:pipelined}
+This architecture is an improvement of the Parallel architecture. It is obtained
+by inserting pipeline registers after each stage.
+The improvements in using a pipelined architecture are clear, higher clock
+frequency thanks to reduced amount of logic between two registers and an high
+throughput, in fact this architecture make possible to have, after the pipeline
+is filled, one result for each clock cycle. Thus is particularly suitable
+for systems that need to process continuous streams of data.
