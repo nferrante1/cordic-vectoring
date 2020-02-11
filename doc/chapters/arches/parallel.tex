@@ -1,6 +1,11 @@
 \section{Parallel}\label{sec:parallel}
-This architecture cames out from the "unrolling" of the word-serial
+This architecture cames out from the \enquote{unrolling} of the word-serial
 architecture. The output of an iteration feed the next stage, and so on.
-This architecture can achieve the throughput of a new result for each clock 
-cycle, but the clock frequency cannot be so high becouse of the high amount of 
-logic between input and output register
+
+This architecture can achieve the throughput of a new result for each clock
+cycle, but the clock frequency cannot be so high because of the high amount of
+logic between input and output registers.
+
+The block diagram of this architecture is similar to the one of the pipelined
+architecture, discussed below. The only difference is that no register is placed
+between each stage.

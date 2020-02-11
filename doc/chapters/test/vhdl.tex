@@ -1,0 +1,21 @@
+\section{VHDL model test}\label{sec:vhdltest}
+
+The last step is to check te correctness of our implementation. To do that we
+have to extract the output from the implementation through a simulation with
+the testbench shown in \lstref{lst:testbench}.
+
+\lstinputlisting[language=vhdl, label={lst:testbench},
+caption={CORDIC testbench
+(\code{cordic\_tb.vhd}).}]{CORDIC/hdl/tb/cordic_tb.vhd}
+
+
+Then we can compute the error of the \matlab{} model with respect to the
+implementation. A correct implementation should have an output completely equal
+to the quantized model's one.
+
+The test performed in \lstref{lst:vhdloutputver} confirm that our implementation
+is completely compliant with the \matlab{} model, thus is correct.
+
+\lstinputlisting[language=matlab, label={lst:vhdloutputver},
+caption={VHDL output verification in Matlab
+(\code{VHDL\_output\_verification.m}).}]{matlab/VHDL_output_verification.m}

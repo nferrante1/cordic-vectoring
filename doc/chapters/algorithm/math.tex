@@ -22,9 +22,9 @@ the~\eqref{eq:rotatedvector} as shown in~\eqref{eq:rotatedvector2}.
 	\end{cases}
 \end{equation}
 
-We cancel out the \(\cos\theta\) to approximate the value: instead of making a
-real rotation we do a \emph{pseudo-rotation}. Thus, the result of this rotation
-will be scaled of a factor \(\frac{1}{\cos\theta} > 1\).
+We cancel out \(\cos\theta\) to approximate the value: instead of making a real
+rotation we do a \emph{pseudo-rotation}. Thus, the result of this rotation will
+be scaled of a factor \(\frac{1}{\cos\theta} \ge 1\).
 
 There's no a mathematical justification for dropping \(\cos\theta\) but the
 reason we do this is that the algorithm is simplified and requires only sums and
@@ -68,8 +68,8 @@ written as shown in~\eqref{eq:iterative}.
 
 Where \(d_i \in \{-1, +1\}\) is a decision operator that is used to choose the
 direction of rotation (\(-1\) clockwise, \(+1\) anticlockwise). \(d_i\) is equal
-to \(-1\) when \(y < 0\) and equal to \(+1\) otherwise\footnote{As said for the
-decision operator is valid only when \cordic{} is used in \emph{Vectoring
+to \(-1\) when \(y < 0\) and equal to \(+1\) otherwise\footnote{What said for
+the decision operator is valid only when \cordic{} is used in \emph{Vectoring
 Mode}. In this document this is the only mode we will discuss.}.
 
 \cordic{} needs also to keep track of the accumulative angle rotated at each

@@ -13,14 +13,14 @@ flushed.
 \figref{fig:blockdiagram} shows the block diagram of our implementation. It
 consists of three modules:
 \begin{enumerate*}[label=]
-	\item A container, that contains the other modules;
+	\item a container, that contains the other modules;
 	\item a pre-rotation module;
 	\item multiple stages connected in pipeline.
 \end{enumerate*}
 
 \begin{figure}[hb]
 	%\includegraphics[width=\textwidth]{blockdiagram}
-	\caption{Block diagram of the chosen architecture.}\label{fig:blockdiagram}
+	\caption{Block diagram of the chosen architecture (pipelined).}\label{fig:blockdiagram}
 \end{figure}
 
 \subsubsection{Container Module}
@@ -40,22 +40,23 @@ This module has as input the x and y values on 16 bits and as output the
 extended and rotated values and the initial phase offset, which can be \(0\),
 \(\pi\) or \(-\pi\). This module will perform preprocessing needed to make the
 algorithm converge. As we know the \cordic{} algorithm convergence is guaranteed
-if the inputs are in the first or the fourth quadrant of the Cartesian plane.
-This because the values for the rotations performed by the algorithm are fixed
-and the sum of this angles converges.
+if the inputs are in the 1\textsuperscript{st} or the 4\textsuperscript{th}
+quadrant of the Cartesian plane. This is because the values for the rotations
+performed by the algorithm are fixed and the sum of this angles converges.
+% FIXME: the sum of this angles converges (?!?)
 
 The output is extended on 20 bits because we have to take in account the bit
 growth in the pipeline that will be of \(\left\lceil{\log_2(n)}\right\rceil\),
 where \(n\) is the number of iterations.
 
 The initial phase offset has been dimensioned on 20 bits too for the same
-reasons of x and y. Note that in this case we don't have a real input on 16 bits
-for the phase, but we have done the quantization of the phase using 16 bits, so
-that the bit growth can be handled in the same way of x and y.
+reasons of \(x\) and \(y\). Note that in this case we don't have a real input on
+16 bits for the phase, but we have done the quantization of the phase using 16
+bits, so that the bit growth can be handled in the same way of \(x\) and \(y\).
 
 The choice of the number of iterations has been done looking at the result of
-the quantization of the angles. Values smaller then \(2^{-12}\) are quantized to
-zero, thus steps after the 13\textsuperscript{th} will not have any influence on
+the quantization of the angles. Values smaller then \(2^{-13}\) are quantized to
+zero, thus steps after the 14\textsuperscript{th} will not have any influence on
 the output phase.
 
 \subsubsection{Pipeline Stages}

@@ -13,9 +13,10 @@ function [radius, phase, x_accumulator, y_accumulator, phase_accumulator] = cord
 	y_accumulator_prev(1:steps_number) = y_val;
 	phase_accumulator_prev(1:steps_number) = initial_phase;
 
-	% Read angles vector
+	% Create angles vector
 	angles_generator = 1./(2.^(0:1:steps_number-1));
-	angles = atan(angles_generator); %Generate elementary angles
+	% Generate elementary angles
+	angles = atan(angles_generator);
 
 	k = 1;
 	% Start loop
@@ -27,12 +28,14 @@ function [radius, phase, x_accumulator, y_accumulator, phase_accumulator] = cord
 			sigma = -1;
 		end
 
-		% Update current accumulator values applying cordic algorithm
+		% Update current accumulator values applying cordic
+		% algorithm
 		x_accumulator(k) = (x_accumulator_prev(k) - (sigma*y_accumulator_prev(k)/(2^(k - 1))));
 		y_accumulator(k) = (y_accumulator_prev(k) + (sigma*x_accumulator_prev(k)/(2^(k - 1))));
 		phase_accumulator(k) = (phase_accumulator_prev(k) - (sigma*angles(k)));
 
-		% Update previous accumulator values for the next iteration
+		% Update previous accumulator values for the next
+		% iteration
 		x_accumulator_prev(k + 1) = x_accumulator(k);
 		y_accumulator_prev(k + 1) = y_accumulator(k);
 		phase_accumulator_prev(k + 1) = phase_accumulator(k);
@@ -40,8 +43,9 @@ function [radius, phase, x_accumulator, y_accumulator, phase_accumulator] = cord
 		k = k + 1;
 	end
 
-	% At the end x_accumulator will contain the radius of the vector
-	% and phase_accumulator will contain the phase of the vector
+	% At the end x_accumulator will contain the radius of the
+	% vector and phase_accumulator will contain the phase of
+	% the vector
 	radius = x_accumulator(steps_number);
 	phase = phase_accumulator(steps_number);
 end

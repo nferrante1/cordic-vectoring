@@ -37,7 +37,8 @@ constant t_clk		: time    := 10 ns;
 --Testbench signals-----------------------------------------
 -- Used to visualize number of data read from file
 signal data_counter	: integer := - filling_clk - 1;
--- Initialization takes in account the clocks consumed to fill the pipeline
+-- Initialization takes in account the clocks consumed to
+	-- fill the pipeline
 
 -- Clock and reset signals
 signal clk		: std_logic := '0';
@@ -134,7 +135,7 @@ begin
 			elsif(rising_edge(clk)) then
 				-- Retrieve data from file and send it into input
 				-- signals
-				if ((not endfile(fptr_x)) or (not endfile(fptr_y))) then -- There is still data to read
+				if ((not endfile(fptr_x)) and (not endfile(fptr_y))) then -- There is still data to read
 					-- X
 					readline(fptr_x, file_line_x);
 					read(file_line_x, x_data);

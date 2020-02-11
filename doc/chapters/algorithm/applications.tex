@@ -1,21 +1,24 @@
 \section{Possible applications}\label{sec:applications}
-\cordic{} is used to compute a large number of trigonometric, logarithmic and 
+
+\cordic{} is used to compute a large number of trigonometric, logarithmic and
 hyperbolic functions, real and complex multiplication, division, square root
-calculation, solution of linear systems eigenvalue calculation and many others
+calculation, solutions of linear systems, eigenvalue calculation and many others
 mathematical problems.
+
 This versatility and the simplicity is the reason why this algorithm has known a
 wide spread in many application areas such as:
-\begin{itemize}
-	\item Signal and image processing: Discrete Cosine Transform, used in
+\begin{description}
+	\item [Signal and image processing] Discrete Cosine Transform, used in
 		compression algorithms, need to compute cosine signals, this can
 		be done using \cordic{};
-	\item Aerospace and Automotive Application: these application need to 
-		track the motion of a vehicle. It can be done using some
-		trigonomtric functions.
-	\item Communication Systems: CORDIC algorithm can be used for generating
-		sine and cosine waves in modulator/demodulators, Phase Locked
-		Loop where the use of a Look Up Table for sine and cosine values
-		storage can be unfeasible because of the dimension of the ROM,
-		thus a simple and powerful arithmetic as \cordic{} can
-		efficiently be used to compute these values when needed.
-\end{itemize}
+	\item[Aerospace and automotive applications] in this field, there is the
+		need to track the motion of a vehicle. It can be done using some
+		trigonometric functions;
+	\item[Communication systems] \cordic{} algorithm can be used for
+		generating sine and cosine waves in modulator/demodulators,
+		Phase Locked Loop where the use of a \emph{look-up table} for
+		sine and cosine values storage can be unfeasible because of the
+		dimension of the ROM, thus a simple and powerful arithmetic as
+		\cordic{} can efficiently be used to compute these values when
+		needed.
+\end{description}

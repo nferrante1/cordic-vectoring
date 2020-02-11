@@ -1,6 +1,7 @@
 % VHDL output verification
-% This script must be run after "quantized/cordic_quantized.m" since it
-% takes some variables from the workspace created by that script
+% This script must be run after quantized/cordic_quantized.m
+% since it takes some variables from the workspace created
+% by that script
 
 output_dir = "output";
 if ~exist(output_dir, 'dir')
@@ -31,10 +32,11 @@ MSE_phase_vhdl = mean((compare_phase - phase_vhdl).^2, "all");
 error_radius_vhdl = sqrt((compare_radius - corrected_radius_vhdl).^2);
 error_phase_vhdl = sqrt((compare_phase - phase_vhdl).^2);
 
-% Difference between errors in matlab and VHDL, for VHDL model goodness
-% verification
+% Difference between errors in matlab and VHDL, for VHDL
+% model goodness verification
 quantized2vhdl_error_radius = error_radius_q - error_radius_vhdl;
 quantized2vhdl_error_phase = error_phase_q - error_phase_vhdl;
 
+% Should be both zero
 has_implementation_error_radius = max(max(abs(quantized2vhdl_error_radius)));
 has_implementation_error_phase = max(max(abs(quantized2vhdl_error_phase)));
