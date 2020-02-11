@@ -1,4 +1,17 @@
 \chapter{Test plan}\label{ch:test}
+For the verification of the correctness of our implementation of
+\cordic{} is to write a \matlab{} model of the algorithm and then compare the
+output to the VHDL one.
+
+\section{Floating Point Model}\label{sec:floating_point_model}
+The first model we have to write is a floating point version of \cordic{}
+algorithm as we can see in \lstref{lst:cordicfloatmatlab}.
+
+
+\lstinputlisting[language=matlab, label={lst:cordicfloatmatlab},
+caption={CORDIC Floating Point Model in Matlab 
+(\code{cordic\_float\_vectoring.m}).}]{matlab/float/cordic_vectoring_float.m}
+
 
 %\lstinputlisting[language=vhdl, label={lst:testbench},
 %caption={CORDIC testbench
