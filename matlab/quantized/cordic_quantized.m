@@ -1,7 +1,7 @@
 % Cordic quantized
 
-clear variables;
-close all;
+% clear variables;
+% close all;
 
 input_dir = "input";
 output_dir = "output";
@@ -83,22 +83,30 @@ phase_q = cell2mat(phase_q);
 radius_q = cell2mat(radius_q);
 
 % "weighting" with the value of LSB.
-phase = phase_q * phase_lsb;
-radius = radius_q * in_lsb;
+phase_q = phase_q * phase_lsb;
+radius_q = radius_q * in_lsb;
 % Correct the radius dividing by the gain
-corrected_radius = radius./gain;
+corrected_radius_q = radius_q./gain;
 
 % Compute expected values for phase and radius using arctan for phase and
 % sqrt(x^2 + y^2) for radius
 [compare_radius, compare_phase] = arrayfun(@to_polar, x, y);
 
 % Compute root mean square error on phase and radius
-MSE_radius_q = sqrt(mean((compare_radius - corrected_radius).^2));
-MSE_phase_q = sqrt(mean((compare_phase - phase).^2));
+MSE_radius_q = sqrt(mean((compare_radius - corrected_radius_q).^2));
+MSE_phase_q = sqrt(mean((compare_phase - phase_q).^2));
 
 % Root squared errors
-error_radius_q = sqrt((compare_radius - corrected_radius).^2);
-error_phase_q = sqrt((compare_phase - phase).^2);
+error_radius_q = sqrt((compare_radius - corrected_radius_q).^2);
+error_phase_q = sqrt((compare_phase - phase_q).^2);
+
+% Compute root mean square error on phase and radius with the float model
+MSE_radius_fq = sqrt(mean((corrected_radius - corrected_radius_q).^2));
+MSE_phase_fq = sqrt(mean((phase - phase_q).^2));
+
+% Root squared errors (with float model)
+error_radius_fq = sqrt((corrected_radius - corrected_radius_q).^2);
+error_phase_fq = sqrt((phase - phase_q).^2);
 %--------------------------------------------------------------------------
 
 % Save inputs, outputs to file

@@ -17,13 +17,13 @@ end
 wordlength = 16;
 
 % steps_number --> number of steps for cordic
-steps_number = 14;
+steps_number = 13;
 %--------------------------------------------------------------------------
 
 %-------------Generate input values----------------------------------------
 % Generate input as points lying on circles with different radius
-theta = (0:5:355);
-r = (0.1:0.1:2.0);
+theta = (-pi:0.25:pi);
+r = (0.1:0.005:0.9);
 
 % Corresponding Cartesian coordintates
 x = r' * cos(theta);
