@@ -54,9 +54,9 @@ corrected_radius = radius./gain;
 % sqrt(x^2 + y^2) for radius
 [compare_radius, compare_phase] = arrayfun(@to_polar, x, y);
 
-% Compute root mean square error for phase and radius
-MSE_radius = sqrt(mean((compare_radius - corrected_radius).^2, "all"));
-MSE_phase = sqrt(mean((compare_phase - phase).^2, "all"));
+% Compute mean square error for phase and radius
+MSE_radius = mean((compare_radius - corrected_radius).^2, "all");
+MSE_phase = mean((compare_phase - phase).^2, "all");
 
 % Root squared errors
 error_radius = sqrt((compare_radius - corrected_radius).^2);

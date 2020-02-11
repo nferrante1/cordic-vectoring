@@ -92,17 +92,21 @@ corrected_radius_q = radius_q./gain;
 % sqrt(x^2 + y^2) for radius
 [compare_radius, compare_phase] = arrayfun(@to_polar, x, y);
 
-% Compute root mean square error on phase and radius
-MSE_radius_q = sqrt(mean((compare_radius - corrected_radius_q).^2));
-MSE_phase_q = sqrt(mean((compare_phase - phase_q).^2));
+% Compute mean square error on phase and radius
+MSE_radius_q = mean((compare_radius - corrected_radius_q).^2, "all");
+MSE_phase_q = mean((compare_phase - phase_q).^2, "all");
 
 % Root squared errors
 error_radius_q = sqrt((compare_radius - corrected_radius_q).^2);
 error_phase_q = sqrt((compare_phase - phase_q).^2);
 
-% Compute root mean square error on phase and radius with the float model
-MSE_radius_fq = sqrt(mean((corrected_radius - corrected_radius_q).^2));
-MSE_phase_fq = sqrt(mean((phase - phase_q).^2));
+% Max error
+max_error_radius_q = max(max(error_radius_q));
+max_error_phase_q = max(max(error_phase_q));
+
+% Compute mean square error on phase and radius with the float model
+MSE_radius_fq = mean((corrected_radius - corrected_radius_q).^2, "all");
+MSE_phase_fq = mean((phase - phase_q).^2, "all");
 
 % Root squared errors (with float model)
 error_radius_fq = sqrt((corrected_radius - corrected_radius_q).^2);
