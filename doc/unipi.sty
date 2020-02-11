@@ -153,13 +153,28 @@
 \renewcommand{\cellalign}{l}
 
 \lstdefinestyle{vhdlcode}{
-	basicstyle   = \ttfamily,
 	keywordstyle = \color{keyword}\bfseries,
 	commentstyle = \color{comment},
 	backgroundcolor = \color{bgcolor},
-	numberstyle= \tiny\color{gray75},
-	stringstyle= \color{gray50},
-	basicstyle= \ttfamily\footnotesize,
+	numberstyle = \tiny\color{gray75},
+	stringstyle = \color{gray50},
+	basicstyle = \ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	postbreak=\mbox{\textcolor{red}{\(\hookrightarrow\)}\space},
+	captionpos=b,
+	tabsize=2,
+	numbers=left,
+	numbersep=5pt
+}
+
+\lstdefinestyle{matlabcode}{
+	basicstyle = \ttfamily\footnotesize,
+	keywordstyle = \color{keyword}\bfseries,
+	commentstyle = \color{comment},
+	backgroundcolor = \color{bgcolor},
+	numberstyle = \tiny\color{gray75},
+	stringstyle = \color{gray50},
 	breakatwhitespace=false,
 	breaklines=true,
 	postbreak=\mbox{\textcolor{red}{\(\hookrightarrow\)}\space},
@@ -191,6 +206,8 @@
 		{9}{{{\bfseries\color{numb}9}}}{1},
 	style=vhdlcode
 }
+
+\lstset{style=matlabcode}
 
 
 \newcommand\theacademicyear{\@academicyear}
