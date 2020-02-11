@@ -1,8 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../../../VHDL/cordic_pipeline_stage.vhd" \
-"../../../../../../VHDL/pre_rotation.vhd" \
-"../../../../../../VHDL/cordic.vhd" \
-
-# Do not sort compile order
-nosort
