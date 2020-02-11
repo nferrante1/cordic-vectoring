@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2.1 (win64) Build 2729669 Thu Dec  5 04:49:17 MST 2019
-| Date         : Tue Feb 11 14:30:26 2020
+| Date         : Tue Feb 11 18:23:45 2020
 | Host         : Win7VM running 64-bit Service Pack 1  (build 7601)
 | Command      : report_drc -name drc_1 -file Z:/cordic-vectoring/vivado/drc_report_synth.txt -ruledecks default
 | Design       : cordic

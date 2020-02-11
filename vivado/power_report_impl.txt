@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2.1 (win64) Build 2729669 Thu Dec  5 04:49:17 MST 2019
-| Date             : Tue Feb 11 14:28:29 2020
+| Date             : Tue Feb 11 18:26:50 2020
 | Host             : Win7VM running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file Z:/cordic-vectoring/vivado/power_report_impl.txt -name power_1
 | Design           : cordic
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.169        |
+| Total On-Chip Power (W)  | 0.172        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.076        |
+| Dynamic (W)              | 0.079        |
 | Device Static (W)        | 0.092        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 83.1         |
-| Junction Temperature (C) | 26.9         |
+| Max Ambient (C)          | 83.0         |
+| Junction Temperature (C) | 27.0         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.006 |        3 |       --- |             --- |
-| Slice Logic    |     0.013 |     1813 |       --- |             --- |
-|   LUT as Logic |     0.010 |      735 |     17600 |            4.18 |
-|   CARRY4       |     0.002 |      200 |      4400 |            4.55 |
-|   Register     |     0.001 |      804 |     35200 |            2.28 |
-|   Others       |     0.000 |       27 |       --- |             --- |
-| Signals        |     0.012 |     1087 |       --- |             --- |
+| Slice Logic    |     0.013 |     1958 |       --- |             --- |
+|   LUT as Logic |     0.010 |      794 |     17600 |            4.51 |
+|   CARRY4       |     0.002 |      217 |      4400 |            4.93 |
+|   Register     |     0.001 |      872 |     35200 |            2.48 |
+|   Others       |     0.000 |       29 |       --- |             --- |
+| Signals        |     0.013 |     1172 |       --- |             --- |
 | I/O            |     0.047 |       74 |       100 |           74.00 |
 | Static Power   |     0.092 |          |           |                 |
-| Total          |     0.169 |          |           |                 |
+| Total          |     0.172 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+------------+
-| Vccint    |       1.000 |     0.034 |       0.030 |      0.004 | Unspecified | NA         |
+| Vccint    |       1.000 |     0.036 |       0.033 |      0.004 | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.009 |       0.004 |      0.005 | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 | Unspecified | NA         |
@@ -147,10 +147,11 @@ Table of Contents
 +-----------------+-----------+
 | Name            | Power (W) |
 +-----------------+-----------+
-| cordic          |     0.076 |
+| cordic          |     0.079 |
 |   GEN[10].STAGE |     0.002 |
-|   GEN[11].STAGE |     0.001 |
+|   GEN[11].STAGE |     0.002 |
 |   GEN[12].STAGE |     0.001 |
+|   GEN[13].STAGE |     0.001 |
 |   GEN[1].STAGE  |     0.002 |
 |   GEN[2].STAGE  |     0.002 |
 |   GEN[3].STAGE  |     0.002 |
@@ -160,7 +161,7 @@ Table of Contents
 |   GEN[7].STAGE  |     0.002 |
 |   GEN[8].STAGE  |     0.002 |
 |   GEN[9].STAGE  |     0.002 |
-|   PRE_ROT       |     0.001 |
+|   PRE_ROT       |     0.002 |
 |   STAGE_0       |     0.003 |
 +-----------------+-----------+
 

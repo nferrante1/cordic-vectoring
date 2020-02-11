@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2.1 (win64) Build 2729669 Thu Dec  5 04:49:17 MST 2019
-| Date         : Tue Feb 11 14:25:20 2020
+| Date         : Tue Feb 11 18:25:21 2020
 | Host         : Win7VM running 64-bit Service Pack 1  (build 7601)
 | Command      : report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 -file Z:/cordic-vectoring/vivado/timing_report_synth.txt
 | Design       : cordic
@@ -203,7 +203,7 @@ radius[9]
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      4.387        0.000                      0                  771        0.139        0.000                      0                  771        3.500        0.000                       0                   805  
+      4.387        0.000                      0                  840        0.139        0.000                      0                  840        3.500        0.000                       0                   873  
 
 
 All user specified timing constraints are met.
@@ -226,7 +226,7 @@ CORDIC_clk  {0.000 4.000}        8.000           125.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-CORDIC_clk          4.387        0.000                      0                  771        0.139        0.000                      0                  771        3.500        0.000                       0                   805  
+CORDIC_clk          4.387        0.000                      0                  840        0.139        0.000                      0                  840        3.500        0.000                       0                   873  
 
 
 ------------------------------------------------------------------------------------------------
@@ -316,7 +316,7 @@ Slack (MET) :             4.387ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    PRE_ROT/CLK
+                         net (fo=872, unplaced)       0.584     2.467    PRE_ROT/CLK
                          FDRE                                         r  PRE_ROT/x_signed_reg[0]/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_fdre_C_Q)         0.456     2.923 f  PRE_ROT/x_signed_reg[0]/Q
@@ -355,7 +355,7 @@ Slack (MET) :             4.387ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.760     9.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     9.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439    10.138    PRE_ROT/CLK
+                         net (fo=872, unplaced)       0.439    10.138    PRE_ROT/CLK
                          FDRE                                         r  PRE_ROT/x_out_reg[16]/C
                          clock pessimism              0.184    10.322    
                          clock uncertainty           -0.035    10.287    
@@ -397,11 +397,11 @@ Slack (MET) :             4.406ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    PRE_ROT/CLK
+                         net (fo=872, unplaced)       0.584     2.467    PRE_ROT/CLK
                          FDRE                                         r  PRE_ROT/x_out_reg[1]/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_fdre_C_Q)         0.456     2.923 r  PRE_ROT/x_out_reg[1]/Q
-                         net (fo=5, unplaced)         0.498     3.421    PRE_ROT/x_out_reg[18]_0[1]
+                         net (fo=5, unplaced)         0.498     3.421    PRE_ROT/Q[1]
                                                                       r  PRE_ROT/x_out0_carry_i_3/I0
                          LUT2 (Prop_lut2_I0_O)        0.295     3.716 r  PRE_ROT/x_out0_carry_i_3/O
                          net (fo=1, unplaced)         0.000     3.716    STAGE_0/S[1]
@@ -440,7 +440,7 @@ Slack (MET) :             4.406ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.760     9.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     9.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439    10.138    STAGE_0/CLK
+                         net (fo=872, unplaced)       0.439    10.138    STAGE_0/CLK
                          FDRE                                         r  STAGE_0/y_out_reg[17]/C
                          clock pessimism              0.184    10.322    
                          clock uncertainty           -0.035    10.287    
@@ -482,11 +482,11 @@ Slack (MET) :             4.443ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    PRE_ROT/CLK
+                         net (fo=872, unplaced)       0.584     2.467    PRE_ROT/CLK
                          FDRE                                         r  PRE_ROT/x_out_reg[1]/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_fdre_C_Q)         0.456     2.923 r  PRE_ROT/x_out_reg[1]/Q
-                         net (fo=5, unplaced)         0.498     3.421    PRE_ROT/x_out_reg[18]_0[1]
+                         net (fo=5, unplaced)         0.498     3.421    PRE_ROT/Q[1]
                                                                       r  PRE_ROT/i__carry_i_3/I0
                          LUT2 (Prop_lut2_I0_O)        0.295     3.716 r  PRE_ROT/i__carry_i_3/O
                          net (fo=1, unplaced)         0.000     3.716    STAGE_0/x_out_reg[3]_0[1]
@@ -525,7 +525,7 @@ Slack (MET) :             4.443ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.760     9.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     9.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439    10.138    STAGE_0/CLK
+                         net (fo=872, unplaced)       0.439    10.138    STAGE_0/CLK
                          FDRE                                         r  STAGE_0/x_out_reg[17]/C
                          clock pessimism              0.184    10.322    
                          clock uncertainty           -0.035    10.287    
@@ -567,11 +567,11 @@ Slack (MET) :             4.443ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    PRE_ROT/CLK
+                         net (fo=872, unplaced)       0.584     2.467    PRE_ROT/CLK
                          FDRE                                         r  PRE_ROT/x_out_reg[1]/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_fdre_C_Q)         0.456     2.923 r  PRE_ROT/x_out_reg[1]/Q
-                         net (fo=5, unplaced)         0.498     3.421    PRE_ROT/x_out_reg[18]_0[1]
+                         net (fo=5, unplaced)         0.498     3.421    PRE_ROT/Q[1]
                                                                       r  PRE_ROT/x_out0_carry_i_3/I0
                          LUT2 (Prop_lut2_I0_O)        0.295     3.716 r  PRE_ROT/x_out0_carry_i_3/O
                          net (fo=1, unplaced)         0.000     3.716    STAGE_0/S[1]
@@ -610,7 +610,7 @@ Slack (MET) :             4.443ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.760     9.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     9.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439    10.138    STAGE_0/CLK
+                         net (fo=872, unplaced)       0.439    10.138    STAGE_0/CLK
                          FDRE                                         r  STAGE_0/x_out_reg[19]/C
                          clock pessimism              0.184    10.322    
                          clock uncertainty           -0.035    10.287    
@@ -652,11 +652,11 @@ Slack (MET) :             4.464ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    PRE_ROT/CLK
+                         net (fo=872, unplaced)       0.584     2.467    PRE_ROT/CLK
                          FDRE                                         r  PRE_ROT/y_out_reg[1]/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_fdre_C_Q)         0.456     2.923 r  PRE_ROT/y_out_reg[1]/Q
-                         net (fo=4, unplaced)         0.494     3.417    PRE_ROT/Q[1]
+                         net (fo=4, unplaced)         0.494     3.417    PRE_ROT/y_out_reg[18]_0[1]
                                                                       r  PRE_ROT/y_out0_carry_i_3/I0
                          LUT2 (Prop_lut2_I0_O)        0.295     3.712 r  PRE_ROT/y_out0_carry_i_3/O
                          net (fo=1, unplaced)         0.000     3.712    STAGE_0/y_out_reg[3]_0[1]
@@ -695,7 +695,7 @@ Slack (MET) :             4.464ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.760     9.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     9.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439    10.138    STAGE_0/CLK
+                         net (fo=872, unplaced)       0.439    10.138    STAGE_0/CLK
                          FDRE                                         r  STAGE_0/y_out_reg[19]/C
                          clock pessimism              0.184    10.322    
                          clock uncertainty           -0.035    10.287    
@@ -737,7 +737,7 @@ Slack (MET) :             4.501ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    PRE_ROT/CLK
+                         net (fo=872, unplaced)       0.584     2.467    PRE_ROT/CLK
                          FDRE                                         r  PRE_ROT/x_signed_reg[0]/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_fdre_C_Q)         0.456     2.923 f  PRE_ROT/x_signed_reg[0]/Q
@@ -772,7 +772,7 @@ Slack (MET) :             4.501ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.760     9.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     9.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439    10.138    PRE_ROT/CLK
+                         net (fo=872, unplaced)       0.439    10.138    PRE_ROT/CLK
                          FDRE                                         r  PRE_ROT/x_out_reg[12]/C
                          clock pessimism              0.184    10.322    
                          clock uncertainty           -0.035    10.287    
@@ -783,7 +783,7 @@ Slack (MET) :             4.501ns  (required time - arrival time)
   -------------------------------------------------------------------
                          slack                                  4.501    
 
-Slack (MET) :             4.518ns  (required time - arrival time)
+Slack (MET) :             4.512ns  (required time - arrival time)
   Source:                 PRE_ROT/x_signed_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            PRE_ROT/x_out_reg[19]/D
@@ -791,7 +791,7 @@ Slack (MET) :             4.518ns  (required time - arrival time)
   Path Group:             CORDIC_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (CORDIC_clk rise@8.000ns - CORDIC_clk rise@0.000ns)
-  Data Path Delay:        3.331ns  (logic 2.224ns (66.767%)  route 1.107ns (33.233%))
+  Data Path Delay:        3.337ns  (logic 2.230ns (66.826%)  route 1.107ns (33.174%))
   Logic Levels:           7  (CARRY4=5 LUT1=1 LUT2=1)
   Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    2.138ns = ( 10.138 - 8.000 ) 
@@ -814,7 +814,7 @@ Slack (MET) :             4.518ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    PRE_ROT/CLK
+                         net (fo=872, unplaced)       0.584     2.467    PRE_ROT/CLK
                          FDRE                                         r  PRE_ROT/x_signed_reg[0]/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_fdre_C_Q)         0.456     2.923 f  PRE_ROT/x_signed_reg[0]/Q
@@ -843,8 +843,8 @@ Slack (MET) :             4.518ns  (required time - arrival time)
                                                       0.256     5.051 r  PRE_ROT/x_out_reg[19]_i_2/O[2]
                          net (fo=1, unplaced)         0.452     5.503    PRE_ROT/x_out0[19]
                                                                       r  PRE_ROT/x_out[19]_i_1/I0
-                         LUT2 (Prop_lut2_I0_O)        0.295     5.798 r  PRE_ROT/x_out[19]_i_1/O
-                         net (fo=1, unplaced)         0.000     5.798    PRE_ROT/x_out[19]_i_1_n_0
+                         LUT2 (Prop_lut2_I0_O)        0.301     5.804 r  PRE_ROT/x_out[19]_i_1/O
+                         net (fo=1, unplaced)         0.000     5.804    PRE_ROT/x_out[19]_i_1_n_0
                          FDRE                                         r  PRE_ROT/x_out_reg[19]/D
   -------------------------------------------------------------------    -------------------
 
@@ -857,16 +857,16 @@ Slack (MET) :             4.518ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.760     9.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     9.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439    10.138    PRE_ROT/CLK
+                         net (fo=872, unplaced)       0.439    10.138    PRE_ROT/CLK
                          FDRE                                         r  PRE_ROT/x_out_reg[19]/C
                          clock pessimism              0.184    10.322    
                          clock uncertainty           -0.035    10.287    
                          FDRE (Setup_fdre_C_D)        0.029    10.316    PRE_ROT/x_out_reg[19]
   -------------------------------------------------------------------
                          required time                         10.316    
-                         arrival time                          -5.798    
+                         arrival time                          -5.804    
   -------------------------------------------------------------------
-                         slack                                  4.518    
+                         slack                                  4.512    
 
 Slack (MET) :             4.520ns  (required time - arrival time)
   Source:                 PRE_ROT/x_out_reg[1]/C
@@ -899,11 +899,11 @@ Slack (MET) :             4.520ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    PRE_ROT/CLK
+                         net (fo=872, unplaced)       0.584     2.467    PRE_ROT/CLK
                          FDRE                                         r  PRE_ROT/x_out_reg[1]/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_fdre_C_Q)         0.456     2.923 r  PRE_ROT/x_out_reg[1]/Q
-                         net (fo=5, unplaced)         0.498     3.421    PRE_ROT/x_out_reg[18]_0[1]
+                         net (fo=5, unplaced)         0.498     3.421    PRE_ROT/Q[1]
                                                                       r  PRE_ROT/x_out0_carry_i_3/I0
                          LUT2 (Prop_lut2_I0_O)        0.295     3.716 r  PRE_ROT/x_out0_carry_i_3/O
                          net (fo=1, unplaced)         0.000     3.716    STAGE_0/S[1]
@@ -938,7 +938,7 @@ Slack (MET) :             4.520ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.760     9.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     9.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439    10.138    STAGE_0/CLK
+                         net (fo=872, unplaced)       0.439    10.138    STAGE_0/CLK
                          FDRE                                         r  STAGE_0/y_out_reg[13]/C
                          clock pessimism              0.184    10.322    
                          clock uncertainty           -0.035    10.287    
@@ -980,7 +980,7 @@ Slack (MET) :             4.555ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    PRE_ROT/CLK
+                         net (fo=872, unplaced)       0.584     2.467    PRE_ROT/CLK
                          FDRE                                         r  PRE_ROT/x_signed_reg[0]/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_fdre_C_Q)         0.456     2.923 f  PRE_ROT/x_signed_reg[0]/Q
@@ -1023,7 +1023,7 @@ Slack (MET) :             4.555ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.760     9.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     9.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439    10.138    PRE_ROT/CLK
+                         net (fo=872, unplaced)       0.439    10.138    PRE_ROT/CLK
                          FDRE                                         r  PRE_ROT/x_out_reg[18]/C
                          clock pessimism              0.184    10.322    
                          clock uncertainty           -0.035    10.287    
@@ -1065,11 +1065,11 @@ Slack (MET) :             4.557ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    PRE_ROT/CLK
+                         net (fo=872, unplaced)       0.584     2.467    PRE_ROT/CLK
                          FDRE                                         r  PRE_ROT/x_out_reg[1]/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_fdre_C_Q)         0.456     2.923 r  PRE_ROT/x_out_reg[1]/Q
-                         net (fo=5, unplaced)         0.498     3.421    PRE_ROT/x_out_reg[18]_0[1]
+                         net (fo=5, unplaced)         0.498     3.421    PRE_ROT/Q[1]
                                                                       r  PRE_ROT/i__carry_i_3/I0
                          LUT2 (Prop_lut2_I0_O)        0.295     3.716 r  PRE_ROT/i__carry_i_3/O
                          net (fo=1, unplaced)         0.000     3.716    STAGE_0/x_out_reg[3]_0[1]
@@ -1104,7 +1104,7 @@ Slack (MET) :             4.557ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.760     9.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     9.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439    10.138    STAGE_0/CLK
+                         net (fo=872, unplaced)       0.439    10.138    STAGE_0/CLK
                          FDRE                                         r  STAGE_0/x_out_reg[13]/C
                          clock pessimism              0.184    10.322    
                          clock uncertainty           -0.035    10.287    
@@ -1122,9 +1122,9 @@ Slack (MET) :             4.557ns  (required time - arrival time)
 Min Delay Paths
 --------------------------------------------------------------------------------------
 Slack (MET) :             0.139ns  (arrival time - required time)
-  Source:                 GEN[9].STAGE/phase_out_reg[0]/C
+  Source:                 GEN[10].STAGE/phase_out_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[10].STAGE/phase_out_reg[0]/D
+  Destination:            GEN[11].STAGE/phase_out_reg[0]/D
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             CORDIC_clk
   Path Type:              Hold (Min at Fast Process Corner)
@@ -1147,15 +1147,15 @@ Slack (MET) :             0.139ns  (arrival time - required time)
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[9].STAGE/CLK
-                         FDRE                                         r  GEN[9].STAGE/phase_out_reg[0]/C
+                         net (fo=872, unplaced)       0.114     0.688    GEN[10].STAGE/CLK
+                         FDRE                                         r  GEN[10].STAGE/phase_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 f  GEN[9].STAGE/phase_out_reg[0]/Q
-                         net (fo=2, unplaced)         0.136     0.965    GEN[9].STAGE/phase_out_reg_n_0_[0]
-                                                                      f  GEN[9].STAGE/phase_out[0]_i_1__1/I0
-                         LUT1 (Prop_lut1_I0_O)        0.098     1.063 r  GEN[9].STAGE/phase_out[0]_i_1__1/O
-                         net (fo=1, unplaced)         0.000     1.063    GEN[10].STAGE/phase_out_reg[19]_0[0]
-                         FDRE                                         r  GEN[10].STAGE/phase_out_reg[0]/D
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 f  GEN[10].STAGE/phase_out_reg[0]/Q
+                         net (fo=2, unplaced)         0.136     0.965    GEN[10].STAGE/phase_out_reg_n_0_[0]
+                                                                      f  GEN[10].STAGE/phase_out[0]_i_1__6/I0
+                         LUT1 (Prop_lut1_I0_O)        0.098     1.063 r  GEN[10].STAGE/phase_out[0]_i_1__6/O
+                         net (fo=1, unplaced)         0.000     1.063    GEN[11].STAGE/phase_out_reg[19]_0[0]
+                         FDRE                                         r  GEN[11].STAGE/phase_out_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock CORDIC_clk rise edge)
@@ -1167,10 +1167,10 @@ Slack (MET) :             0.139ns  (arrival time - required time)
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
-                         FDRE                                         r  GEN[10].STAGE/phase_out_reg[0]/C
+                         net (fo=872, unplaced)       0.259     1.043    GEN[11].STAGE/CLK
+                         FDRE                                         r  GEN[11].STAGE/phase_out_reg[0]/C
                          clock pessimism             -0.210     0.833    
-                         FDRE (Hold_fdre_C_D)         0.091     0.924    GEN[10].STAGE/phase_out_reg[0]
+                         FDRE (Hold_fdre_C_D)         0.091     0.924    GEN[11].STAGE/phase_out_reg[0]
   -------------------------------------------------------------------
                          required time                         -0.924    
                          arrival time                           1.063    
@@ -1178,9 +1178,9 @@ Slack (MET) :             0.139ns  (arrival time - required time)
                          slack                                  0.139    
 
 Slack (MET) :             0.139ns  (arrival time - required time)
-  Source:                 GEN[11].STAGE/phase_out_reg[0]/C
+  Source:                 GEN[12].STAGE/phase_out_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[12].STAGE/phase_out_reg[0]/D
+  Destination:            GEN[13].STAGE/phase_out_reg[0]/D
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             CORDIC_clk
   Path Type:              Hold (Min at Fast Process Corner)
@@ -1203,15 +1203,15 @@ Slack (MET) :             0.139ns  (arrival time - required time)
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[11].STAGE/CLK
-                         FDRE                                         r  GEN[11].STAGE/phase_out_reg[0]/C
+                         net (fo=872, unplaced)       0.114     0.688    GEN[12].STAGE/CLK
+                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 f  GEN[11].STAGE/phase_out_reg[0]/Q
-                         net (fo=2, unplaced)         0.136     0.965    GEN[11].STAGE/phase_out_reg_n_0_[0]
-                                                                      f  GEN[11].STAGE/phase_out[0]_i_1__2/I0
-                         LUT1 (Prop_lut1_I0_O)        0.098     1.063 r  GEN[11].STAGE/phase_out[0]_i_1__2/O
-                         net (fo=1, unplaced)         0.000     1.063    GEN[12].STAGE/phase_out_reg[19]_1[0]
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[0]/D
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 f  GEN[12].STAGE/phase_out_reg[0]/Q
+                         net (fo=2, unplaced)         0.136     0.965    GEN[12].STAGE/phase_out_reg_n_0_[0]
+                                                                      f  GEN[12].STAGE/phase_out[0]_i_1__7/I0
+                         LUT1 (Prop_lut1_I0_O)        0.098     1.063 r  GEN[12].STAGE/phase_out[0]_i_1__7/O
+                         net (fo=1, unplaced)         0.000     1.063    GEN[13].STAGE/phase_out_reg[19]_1[0]
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock CORDIC_clk rise edge)
@@ -1223,10 +1223,178 @@ Slack (MET) :             0.139ns  (arrival time - required time)
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[0]/C
+                         net (fo=872, unplaced)       0.259     1.043    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[0]/C
                          clock pessimism             -0.210     0.833    
-                         FDRE (Hold_fdre_C_D)         0.091     0.924    GEN[12].STAGE/phase_out_reg[0]
+                         FDRE (Hold_fdre_C_D)         0.091     0.924    GEN[13].STAGE/phase_out_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -0.924    
+                         arrival time                           1.063    
+  -------------------------------------------------------------------
+                         slack                                  0.139    
+
+Slack (MET) :             0.139ns  (arrival time - required time)
+  Source:                 STAGE_0/phase_out_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            GEN[1].STAGE/phase_out_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             CORDIC_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (CORDIC_clk rise@0.000ns - CORDIC_clk rise@0.000ns)
+  Data Path Delay:        0.375ns  (logic 0.239ns (63.779%)  route 0.136ns (36.221%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Path Skew:        0.145ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.043ns
+    Source Clock Delay      (SCD):    0.688ns
+    Clock Pessimism Removal (CPR):    0.210ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CORDIC_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+                                                                      r  clk_IBUF_inst/I
+                         IBUF (Prop_ibuf_I_O)         0.211     0.211 r  clk_IBUF_inst/O
+                         net (fo=1, unplaced)         0.337     0.548    clk_IBUF
+                                                                      r  clk_IBUF_BUFG_inst/I
+                         BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
+                         net (fo=872, unplaced)       0.114     0.688    STAGE_0/CLK
+                         FDRE                                         r  STAGE_0/phase_out_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 f  STAGE_0/phase_out_reg[0]/Q
+                         net (fo=2, unplaced)         0.136     0.965    STAGE_0/phase_out_reg_n_0_[0]
+                                                                      f  STAGE_0/phase_out[0]_i_1__0/I0
+                         LUT1 (Prop_lut1_I0_O)        0.098     1.063 r  STAGE_0/phase_out[0]_i_1__0/O
+                         net (fo=1, unplaced)         0.000     1.063    GEN[1].STAGE/phase_out_reg[19]_0[0]
+                         FDRE                                         r  GEN[1].STAGE/phase_out_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CORDIC_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+                                                                      r  clk_IBUF_inst/I
+                         IBUF (Prop_ibuf_I_O)         0.400     0.400 r  clk_IBUF_inst/O
+                         net (fo=1, unplaced)         0.355     0.755    clk_IBUF
+                                                                      r  clk_IBUF_BUFG_inst/I
+                         BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
+                         net (fo=872, unplaced)       0.259     1.043    GEN[1].STAGE/CLK
+                         FDRE                                         r  GEN[1].STAGE/phase_out_reg[0]/C
+                         clock pessimism             -0.210     0.833    
+                         FDRE (Hold_fdre_C_D)         0.091     0.924    GEN[1].STAGE/phase_out_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -0.924    
+                         arrival time                           1.063    
+  -------------------------------------------------------------------
+                         slack                                  0.139    
+
+Slack (MET) :             0.139ns  (arrival time - required time)
+  Source:                 GEN[1].STAGE/phase_out_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            GEN[2].STAGE/phase_out_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             CORDIC_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (CORDIC_clk rise@0.000ns - CORDIC_clk rise@0.000ns)
+  Data Path Delay:        0.375ns  (logic 0.239ns (63.779%)  route 0.136ns (36.221%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Path Skew:        0.145ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.043ns
+    Source Clock Delay      (SCD):    0.688ns
+    Clock Pessimism Removal (CPR):    0.210ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CORDIC_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+                                                                      r  clk_IBUF_inst/I
+                         IBUF (Prop_ibuf_I_O)         0.211     0.211 r  clk_IBUF_inst/O
+                         net (fo=1, unplaced)         0.337     0.548    clk_IBUF
+                                                                      r  clk_IBUF_BUFG_inst/I
+                         BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
+                         net (fo=872, unplaced)       0.114     0.688    GEN[1].STAGE/CLK
+                         FDRE                                         r  GEN[1].STAGE/phase_out_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 f  GEN[1].STAGE/phase_out_reg[0]/Q
+                         net (fo=2, unplaced)         0.136     0.965    GEN[1].STAGE/phase_out_reg_n_0_[0]
+                                                                      f  GEN[1].STAGE/phase_out[0]_i_1__1/I0
+                         LUT1 (Prop_lut1_I0_O)        0.098     1.063 r  GEN[1].STAGE/phase_out[0]_i_1__1/O
+                         net (fo=1, unplaced)         0.000     1.063    GEN[2].STAGE/phase_out_reg[19]_0[0]
+                         FDRE                                         r  GEN[2].STAGE/phase_out_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CORDIC_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+                                                                      r  clk_IBUF_inst/I
+                         IBUF (Prop_ibuf_I_O)         0.400     0.400 r  clk_IBUF_inst/O
+                         net (fo=1, unplaced)         0.355     0.755    clk_IBUF
+                                                                      r  clk_IBUF_BUFG_inst/I
+                         BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
+                         net (fo=872, unplaced)       0.259     1.043    GEN[2].STAGE/CLK
+                         FDRE                                         r  GEN[2].STAGE/phase_out_reg[0]/C
+                         clock pessimism             -0.210     0.833    
+                         FDRE (Hold_fdre_C_D)         0.091     0.924    GEN[2].STAGE/phase_out_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -0.924    
+                         arrival time                           1.063    
+  -------------------------------------------------------------------
+                         slack                                  0.139    
+
+Slack (MET) :             0.139ns  (arrival time - required time)
+  Source:                 GEN[2].STAGE/phase_out_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            GEN[3].STAGE/phase_out_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             CORDIC_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (CORDIC_clk rise@0.000ns - CORDIC_clk rise@0.000ns)
+  Data Path Delay:        0.375ns  (logic 0.239ns (63.779%)  route 0.136ns (36.221%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Path Skew:        0.145ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.043ns
+    Source Clock Delay      (SCD):    0.688ns
+    Clock Pessimism Removal (CPR):    0.210ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CORDIC_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+                                                                      r  clk_IBUF_inst/I
+                         IBUF (Prop_ibuf_I_O)         0.211     0.211 r  clk_IBUF_inst/O
+                         net (fo=1, unplaced)         0.337     0.548    clk_IBUF
+                                                                      r  clk_IBUF_BUFG_inst/I
+                         BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
+                         net (fo=872, unplaced)       0.114     0.688    GEN[2].STAGE/CLK
+                         FDRE                                         r  GEN[2].STAGE/phase_out_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 f  GEN[2].STAGE/phase_out_reg[0]/Q
+                         net (fo=2, unplaced)         0.136     0.965    GEN[2].STAGE/phase_out_reg_n_0_[0]
+                                                                      f  GEN[2].STAGE/phase_out[0]_i_1__2/I0
+                         LUT1 (Prop_lut1_I0_O)        0.098     1.063 r  GEN[2].STAGE/phase_out[0]_i_1__2/O
+                         net (fo=1, unplaced)         0.000     1.063    GEN[3].STAGE/phase_out_reg[19]_0[0]
+                         FDRE                                         r  GEN[3].STAGE/phase_out_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CORDIC_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+                                                                      r  clk_IBUF_inst/I
+                         IBUF (Prop_ibuf_I_O)         0.400     0.400 r  clk_IBUF_inst/O
+                         net (fo=1, unplaced)         0.355     0.755    clk_IBUF
+                                                                      r  clk_IBUF_BUFG_inst/I
+                         BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
+                         net (fo=872, unplaced)       0.259     1.043    GEN[3].STAGE/CLK
+                         FDRE                                         r  GEN[3].STAGE/phase_out_reg[0]/C
+                         clock pessimism             -0.210     0.833    
+                         FDRE (Hold_fdre_C_D)         0.091     0.924    GEN[3].STAGE/phase_out_reg[0]
   -------------------------------------------------------------------
                          required time                         -0.924    
                          arrival time                           1.063    
@@ -1259,13 +1427,13 @@ Slack (MET) :             0.139ns  (arrival time - required time)
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[3].STAGE/CLK
+                         net (fo=872, unplaced)       0.114     0.688    GEN[3].STAGE/CLK
                          FDRE                                         r  GEN[3].STAGE/phase_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_fdre_C_Q)         0.141     0.829 f  GEN[3].STAGE/phase_out_reg[0]/Q
                          net (fo=2, unplaced)         0.136     0.965    GEN[3].STAGE/phase_out_reg_n_0_[0]
-                                                                      f  GEN[3].STAGE/phase_out[0]_i_1/I0
-                         LUT1 (Prop_lut1_I0_O)        0.098     1.063 r  GEN[3].STAGE/phase_out[0]_i_1/O
+                                                                      f  GEN[3].STAGE/phase_out[0]_i_1__3/I0
+                         LUT1 (Prop_lut1_I0_O)        0.098     1.063 r  GEN[3].STAGE/phase_out[0]_i_1__3/O
                          net (fo=1, unplaced)         0.000     1.063    GEN[4].STAGE/phase_out_reg[19]_0[0]
                          FDRE                                         r  GEN[4].STAGE/phase_out_reg[0]/D
   -------------------------------------------------------------------    -------------------
@@ -1279,7 +1447,7 @@ Slack (MET) :             0.139ns  (arrival time - required time)
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[4].STAGE/CLK
+                         net (fo=872, unplaced)       0.259     1.043    GEN[4].STAGE/CLK
                          FDRE                                         r  GEN[4].STAGE/phase_out_reg[0]/C
                          clock pessimism             -0.210     0.833    
                          FDRE (Hold_fdre_C_D)         0.091     0.924    GEN[4].STAGE/phase_out_reg[0]
@@ -1290,9 +1458,9 @@ Slack (MET) :             0.139ns  (arrival time - required time)
                          slack                                  0.139    
 
 Slack (MET) :             0.139ns  (arrival time - required time)
-  Source:                 GEN[5].STAGE/phase_out_reg[0]/C
+  Source:                 GEN[4].STAGE/phase_out_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[6].STAGE/phase_out_reg[0]/D
+  Destination:            GEN[5].STAGE/phase_out_reg[0]/D
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             CORDIC_clk
   Path Type:              Hold (Min at Fast Process Corner)
@@ -1315,15 +1483,15 @@ Slack (MET) :             0.139ns  (arrival time - required time)
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[5].STAGE/CLK
-                         FDRE                                         r  GEN[5].STAGE/phase_out_reg[0]/C
+                         net (fo=872, unplaced)       0.114     0.688    GEN[4].STAGE/CLK
+                         FDRE                                         r  GEN[4].STAGE/phase_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 f  GEN[5].STAGE/phase_out_reg[0]/Q
-                         net (fo=2, unplaced)         0.136     0.965    GEN[5].STAGE/phase_out_reg_n_0_[0]
-                                                                      f  GEN[5].STAGE/phase_out[0]_i_1__0/I0
-                         LUT1 (Prop_lut1_I0_O)        0.098     1.063 r  GEN[5].STAGE/phase_out[0]_i_1__0/O
-                         net (fo=1, unplaced)         0.000     1.063    GEN[6].STAGE/phase_out_reg[19]_0[0]
-                         FDRE                                         r  GEN[6].STAGE/phase_out_reg[0]/D
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 f  GEN[4].STAGE/phase_out_reg[0]/Q
+                         net (fo=2, unplaced)         0.136     0.965    GEN[4].STAGE/phase_out_reg_n_0_[0]
+                                                                      f  GEN[4].STAGE/phase_out[0]_i_1__4/I0
+                         LUT1 (Prop_lut1_I0_O)        0.098     1.063 r  GEN[4].STAGE/phase_out[0]_i_1__4/O
+                         net (fo=1, unplaced)         0.000     1.063    GEN[5].STAGE/phase_out_reg[19]_0[0]
+                         FDRE                                         r  GEN[5].STAGE/phase_out_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock CORDIC_clk rise edge)
@@ -1335,70 +1503,17 @@ Slack (MET) :             0.139ns  (arrival time - required time)
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[6].STAGE/CLK
-                         FDRE                                         r  GEN[6].STAGE/phase_out_reg[0]/C
+                         net (fo=872, unplaced)       0.259     1.043    GEN[5].STAGE/CLK
+                         FDRE                                         r  GEN[5].STAGE/phase_out_reg[0]/C
                          clock pessimism             -0.210     0.833    
-                         FDRE (Hold_fdre_C_D)         0.091     0.924    GEN[6].STAGE/phase_out_reg[0]
+                         FDRE (Hold_fdre_C_D)         0.091     0.924    GEN[5].STAGE/phase_out_reg[0]
   -------------------------------------------------------------------
                          required time                         -0.924    
                          arrival time                           1.063    
   -------------------------------------------------------------------
                          slack                                  0.139    
 
-Slack (MET) :             0.154ns  (arrival time - required time)
-  Source:                 GEN[2].STAGE/phase_out_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[3].STAGE/phase_out_reg[1]/D
-                            (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             CORDIC_clk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (CORDIC_clk rise@0.000ns - CORDIC_clk rise@0.000ns)
-  Data Path Delay:        0.282ns  (logic 0.141ns (50.038%)  route 0.141ns (49.962%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.145ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.043ns
-    Source Clock Delay      (SCD):    0.688ns
-    Clock Pessimism Removal (CPR):    0.210ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CORDIC_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-                                                                      r  clk_IBUF_inst/I
-                         IBUF (Prop_ibuf_I_O)         0.211     0.211 r  clk_IBUF_inst/O
-                         net (fo=1, unplaced)         0.337     0.548    clk_IBUF
-                                                                      r  clk_IBUF_BUFG_inst/I
-                         BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[2].STAGE/CLK
-                         FDRE                                         r  GEN[2].STAGE/phase_out_reg[1]/C
-  -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[2].STAGE/phase_out_reg[1]/Q
-                         net (fo=1, unplaced)         0.141     0.970    GEN[3].STAGE/phase_out_reg[19]_0[1]
-                         FDRE                                         r  GEN[3].STAGE/phase_out_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CORDIC_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-                                                                      r  clk_IBUF_inst/I
-                         IBUF (Prop_ibuf_I_O)         0.400     0.400 r  clk_IBUF_inst/O
-                         net (fo=1, unplaced)         0.355     0.755    clk_IBUF
-                                                                      r  clk_IBUF_BUFG_inst/I
-                         BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[3].STAGE/CLK
-                         FDRE                                         r  GEN[3].STAGE/phase_out_reg[1]/C
-                         clock pessimism             -0.210     0.833    
-                         FDRE (Hold_fdre_C_D)        -0.017     0.816    GEN[3].STAGE/phase_out_reg[1]
-  -------------------------------------------------------------------
-                         required time                         -0.816    
-                         arrival time                           0.970    
-  -------------------------------------------------------------------
-                         slack                                  0.154    
-
-Slack (MET) :             0.154ns  (arrival time - required time)
+Slack (MET) :             0.139ns  (arrival time - required time)
   Source:                 GEN[6].STAGE/phase_out_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            GEN[7].STAGE/phase_out_reg[0]/D
@@ -1406,8 +1521,8 @@ Slack (MET) :             0.154ns  (arrival time - required time)
   Path Group:             CORDIC_clk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (CORDIC_clk rise@0.000ns - CORDIC_clk rise@0.000ns)
-  Data Path Delay:        0.282ns  (logic 0.141ns (50.038%)  route 0.141ns (49.962%))
-  Logic Levels:           0  
+  Data Path Delay:        0.375ns  (logic 0.239ns (63.779%)  route 0.136ns (36.221%))
+  Logic Levels:           1  (LUT1=1)
   Clock Path Skew:        0.145ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    1.043ns
     Source Clock Delay      (SCD):    0.688ns
@@ -1424,11 +1539,14 @@ Slack (MET) :             0.154ns  (arrival time - required time)
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[6].STAGE/CLK
+                         net (fo=872, unplaced)       0.114     0.688    GEN[6].STAGE/CLK
                          FDRE                                         r  GEN[6].STAGE/phase_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[6].STAGE/phase_out_reg[0]/Q
-                         net (fo=1, unplaced)         0.141     0.970    GEN[7].STAGE/phase_out_reg[19]_0[0]
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 f  GEN[6].STAGE/phase_out_reg[0]/Q
+                         net (fo=2, unplaced)         0.136     0.965    GEN[6].STAGE/phase_out_reg_n_0_[0]
+                                                                      f  GEN[6].STAGE/phase_out[0]_i_1__5/I0
+                         LUT1 (Prop_lut1_I0_O)        0.098     1.063 r  GEN[6].STAGE/phase_out[0]_i_1__5/O
+                         net (fo=1, unplaced)         0.000     1.063    GEN[7].STAGE/phase_out_reg[19]_0[0]
                          FDRE                                         r  GEN[7].STAGE/phase_out_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
@@ -1441,26 +1559,26 @@ Slack (MET) :             0.154ns  (arrival time - required time)
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[7].STAGE/CLK
+                         net (fo=872, unplaced)       0.259     1.043    GEN[7].STAGE/CLK
                          FDRE                                         r  GEN[7].STAGE/phase_out_reg[0]/C
                          clock pessimism             -0.210     0.833    
-                         FDRE (Hold_fdre_C_D)        -0.017     0.816    GEN[7].STAGE/phase_out_reg[0]
+                         FDRE (Hold_fdre_C_D)         0.091     0.924    GEN[7].STAGE/phase_out_reg[0]
   -------------------------------------------------------------------
-                         required time                         -0.816    
-                         arrival time                           0.970    
+                         required time                         -0.924    
+                         arrival time                           1.063    
   -------------------------------------------------------------------
-                         slack                                  0.154    
+                         slack                                  0.139    
 
-Slack (MET) :             0.154ns  (arrival time - required time)
-  Source:                 GEN[6].STAGE/phase_out_reg[1]/C
+Slack (MET) :             0.139ns  (arrival time - required time)
+  Source:                 PRE_ROT/phase_offset_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[7].STAGE/phase_out_reg[1]/D
+  Destination:            STAGE_0/phase_out_reg[0]/D
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             CORDIC_clk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (CORDIC_clk rise@0.000ns - CORDIC_clk rise@0.000ns)
-  Data Path Delay:        0.282ns  (logic 0.141ns (50.038%)  route 0.141ns (49.962%))
-  Logic Levels:           0  
+  Data Path Delay:        0.375ns  (logic 0.239ns (63.779%)  route 0.136ns (36.221%))
+  Logic Levels:           1  (LUT1=1)
   Clock Path Skew:        0.145ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    1.043ns
     Source Clock Delay      (SCD):    0.688ns
@@ -1477,12 +1595,15 @@ Slack (MET) :             0.154ns  (arrival time - required time)
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[6].STAGE/CLK
-                         FDRE                                         r  GEN[6].STAGE/phase_out_reg[1]/C
+                         net (fo=872, unplaced)       0.114     0.688    PRE_ROT/CLK
+                         FDRE                                         r  PRE_ROT/phase_offset_reg[0]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[6].STAGE/phase_out_reg[1]/Q
-                         net (fo=1, unplaced)         0.141     0.970    GEN[7].STAGE/phase_out_reg[19]_0[1]
-                         FDRE                                         r  GEN[7].STAGE/phase_out_reg[1]/D
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 f  PRE_ROT/phase_offset_reg[0]/Q
+                         net (fo=2, unplaced)         0.136     0.965    PRE_ROT/phase_offset_reg_n_0_[0]
+                                                                      f  PRE_ROT/phase_out[0]_i_1/I0
+                         LUT1 (Prop_lut1_I0_O)        0.098     1.063 r  PRE_ROT/phase_out[0]_i_1/O
+                         net (fo=1, unplaced)         0.000     1.063    STAGE_0/D[0]
+                         FDRE                                         r  STAGE_0/phase_out_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock CORDIC_clk rise edge)
@@ -1494,15 +1615,15 @@ Slack (MET) :             0.154ns  (arrival time - required time)
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[7].STAGE/CLK
-                         FDRE                                         r  GEN[7].STAGE/phase_out_reg[1]/C
+                         net (fo=872, unplaced)       0.259     1.043    STAGE_0/CLK
+                         FDRE                                         r  STAGE_0/phase_out_reg[0]/C
                          clock pessimism             -0.210     0.833    
-                         FDRE (Hold_fdre_C_D)        -0.017     0.816    GEN[7].STAGE/phase_out_reg[1]
+                         FDRE (Hold_fdre_C_D)         0.091     0.924    STAGE_0/phase_out_reg[0]
   -------------------------------------------------------------------
-                         required time                         -0.816    
-                         arrival time                           0.970    
+                         required time                         -0.924    
+                         arrival time                           1.063    
   -------------------------------------------------------------------
-                         slack                                  0.154    
+                         slack                                  0.139    
 
 Slack (MET) :             0.154ns  (arrival time - required time)
   Source:                 GEN[7].STAGE/phase_out_reg[0]/C
@@ -1530,7 +1651,7 @@ Slack (MET) :             0.154ns  (arrival time - required time)
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[7].STAGE/CLK
+                         net (fo=872, unplaced)       0.114     0.688    GEN[7].STAGE/CLK
                          FDRE                                         r  GEN[7].STAGE/phase_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[7].STAGE/phase_out_reg[0]/Q
@@ -1547,7 +1668,7 @@ Slack (MET) :             0.154ns  (arrival time - required time)
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[8].STAGE/CLK
+                         net (fo=872, unplaced)       0.259     1.043    GEN[8].STAGE/CLK
                          FDRE                                         r  GEN[8].STAGE/phase_out_reg[0]/C
                          clock pessimism             -0.210     0.833    
                          FDRE (Hold_fdre_C_D)        -0.017     0.816    GEN[8].STAGE/phase_out_reg[0]
@@ -1556,115 +1677,6 @@ Slack (MET) :             0.154ns  (arrival time - required time)
                          arrival time                           0.970    
   -------------------------------------------------------------------
                          slack                                  0.154    
-
-Slack (MET) :             0.158ns  (arrival time - required time)
-  Source:                 PRE_ROT/x_signed_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            PRE_ROT/x_out_reg[0]/D
-                            (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             CORDIC_clk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (CORDIC_clk rise@0.000ns - CORDIC_clk rise@0.000ns)
-  Data Path Delay:        0.286ns  (logic 0.141ns (49.228%)  route 0.145ns (50.772%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.145ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.043ns
-    Source Clock Delay      (SCD):    0.688ns
-    Clock Pessimism Removal (CPR):    0.210ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CORDIC_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-                                                                      r  clk_IBUF_inst/I
-                         IBUF (Prop_ibuf_I_O)         0.211     0.211 r  clk_IBUF_inst/O
-                         net (fo=1, unplaced)         0.337     0.548    clk_IBUF
-                                                                      r  clk_IBUF_BUFG_inst/I
-                         BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    PRE_ROT/CLK
-                         FDRE                                         r  PRE_ROT/x_signed_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  PRE_ROT/x_signed_reg[0]/Q
-                         net (fo=2, unplaced)         0.145     0.975    PRE_ROT/x_signed[0]
-                         FDRE                                         r  PRE_ROT/x_out_reg[0]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CORDIC_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-                                                                      r  clk_IBUF_inst/I
-                         IBUF (Prop_ibuf_I_O)         0.400     0.400 r  clk_IBUF_inst/O
-                         net (fo=1, unplaced)         0.355     0.755    clk_IBUF
-                                                                      r  clk_IBUF_BUFG_inst/I
-                         BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    PRE_ROT/CLK
-                         FDRE                                         r  PRE_ROT/x_out_reg[0]/C
-                         clock pessimism             -0.210     0.833    
-                         FDRE (Hold_fdre_C_D)        -0.017     0.816    PRE_ROT/x_out_reg[0]
-  -------------------------------------------------------------------
-                         required time                         -0.816    
-                         arrival time                           0.975    
-  -------------------------------------------------------------------
-                         slack                                  0.158    
-
-Slack (MET) :             0.168ns  (arrival time - required time)
-  Source:                 PRE_ROT/x_signed_reg[19]/C
-                            (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            PRE_ROT/phase_offset_reg[19]/D
-                            (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             CORDIC_clk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (CORDIC_clk rise@0.000ns - CORDIC_clk rise@0.000ns)
-  Data Path Delay:        0.404ns  (logic 0.239ns (59.186%)  route 0.165ns (40.814%))
-  Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        0.145ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.043ns
-    Source Clock Delay      (SCD):    0.688ns
-    Clock Pessimism Removal (CPR):    0.210ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock CORDIC_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-                                                                      r  clk_IBUF_inst/I
-                         IBUF (Prop_ibuf_I_O)         0.211     0.211 r  clk_IBUF_inst/O
-                         net (fo=1, unplaced)         0.337     0.548    clk_IBUF
-                                                                      r  clk_IBUF_BUFG_inst/I
-                         BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    PRE_ROT/CLK
-                         FDRE                                         r  PRE_ROT/x_signed_reg[19]/C
-  -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  PRE_ROT/x_signed_reg[19]/Q
-                         net (fo=46, unplaced)        0.165     0.994    PRE_ROT/x_signed[19]
-                                                                      r  PRE_ROT/phase_offset[19]_i_1/I1
-                         LUT2 (Prop_lut2_I1_O)        0.098     1.092 r  PRE_ROT/phase_offset[19]_i_1/O
-                         net (fo=1, unplaced)         0.000     1.092    PRE_ROT/phase_offset[19]_i_1_n_0
-                         FDRE                                         r  PRE_ROT/phase_offset_reg[19]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CORDIC_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-                                                                      r  clk_IBUF_inst/I
-                         IBUF (Prop_ibuf_I_O)         0.400     0.400 r  clk_IBUF_inst/O
-                         net (fo=1, unplaced)         0.355     0.755    clk_IBUF
-                                                                      r  clk_IBUF_BUFG_inst/I
-                         BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    PRE_ROT/CLK
-                         FDRE                                         r  PRE_ROT/phase_offset_reg[19]/C
-                         clock pessimism             -0.210     0.833    
-                         FDRE (Hold_fdre_C_D)         0.091     0.924    PRE_ROT/phase_offset_reg[19]
-  -------------------------------------------------------------------
-                         required time                         -0.924    
-                         arrival time                           1.092    
-  -------------------------------------------------------------------
-                         slack                                  0.168    
 
 
 
@@ -1684,20 +1696,20 @@ Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.00
 Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000                GEN[10].STAGE/phase_out_reg[11]/C
 Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000                GEN[10].STAGE/phase_out_reg[12]/C
 Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000                GEN[10].STAGE/phase_out_reg[13]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000                GEN[10].STAGE/y_out_reg[16]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000                GEN[10].STAGE/y_out_reg[17]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000                GEN[10].STAGE/y_out_reg[18]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000                GEN[10].STAGE/y_out_reg[19]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000                GEN[10].STAGE/y_out_reg[4]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000                GEN[10].STAGE/y_out_reg[5]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000                GEN[10].STAGE/y_out_reg[6]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000                GEN[10].STAGE/y_out_reg[7]/C
 Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/phase_out_reg[0]/C
 Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/phase_out_reg[10]/C
 Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/phase_out_reg[11]/C
 Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/phase_out_reg[12]/C
 Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/phase_out_reg[13]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/y_out_reg[16]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/y_out_reg[17]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/y_out_reg[18]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/y_out_reg[19]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/y_out_reg[1]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/y_out_reg[4]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/y_out_reg[5]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/y_out_reg[6]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/y_out_reg[7]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/y_out_reg[8]/C
 High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/phase_out_reg[0]/C
 High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/phase_out_reg[0]/C
 High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500                GEN[10].STAGE/phase_out_reg[10]/C
@@ -1724,7 +1736,7 @@ Min Delay            40 Endpoints
 Max Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[0]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[0]
                             (output port)
@@ -1749,10 +1761,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[0]/C
+                         net (fo=872, unplaced)       0.584     2.467    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[12].STAGE/phase_out_reg[0]/Q
+                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[13].STAGE/phase_out_reg[0]/Q
                          net (fo=1, unplaced)         0.800     3.723    phase_OBUF[0]
                                                                       r  phase_OBUF[0]_inst/I
                          OBUF (Prop_obuf_I_O)         2.820     6.543 r  phase_OBUF[0]_inst/O
@@ -1761,7 +1773,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[10]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[10]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[10]
                             (output port)
@@ -1786,10 +1798,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[10]/C
+                         net (fo=872, unplaced)       0.584     2.467    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[10]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[12].STAGE/phase_out_reg[10]/Q
+                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[13].STAGE/phase_out_reg[10]/Q
                          net (fo=1, unplaced)         0.800     3.723    phase_OBUF[10]
                                                                       r  phase_OBUF[10]_inst/I
                          OBUF (Prop_obuf_I_O)         2.820     6.543 r  phase_OBUF[10]_inst/O
@@ -1798,7 +1810,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[11]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[11]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[11]
                             (output port)
@@ -1823,10 +1835,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[11]/C
+                         net (fo=872, unplaced)       0.584     2.467    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[11]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[12].STAGE/phase_out_reg[11]/Q
+                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[13].STAGE/phase_out_reg[11]/Q
                          net (fo=1, unplaced)         0.800     3.723    phase_OBUF[11]
                                                                       r  phase_OBUF[11]_inst/I
                          OBUF (Prop_obuf_I_O)         2.820     6.543 r  phase_OBUF[11]_inst/O
@@ -1835,7 +1847,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[12]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[12]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[12]
                             (output port)
@@ -1860,10 +1872,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[12]/C
+                         net (fo=872, unplaced)       0.584     2.467    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[12]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[12].STAGE/phase_out_reg[12]/Q
+                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[13].STAGE/phase_out_reg[12]/Q
                          net (fo=1, unplaced)         0.800     3.723    phase_OBUF[12]
                                                                       r  phase_OBUF[12]_inst/I
                          OBUF (Prop_obuf_I_O)         2.820     6.543 r  phase_OBUF[12]_inst/O
@@ -1872,7 +1884,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[13]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[13]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[13]
                             (output port)
@@ -1897,10 +1909,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[13]/C
+                         net (fo=872, unplaced)       0.584     2.467    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[13]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[12].STAGE/phase_out_reg[13]/Q
+                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[13].STAGE/phase_out_reg[13]/Q
                          net (fo=1, unplaced)         0.800     3.723    phase_OBUF[13]
                                                                       r  phase_OBUF[13]_inst/I
                          OBUF (Prop_obuf_I_O)         2.820     6.543 r  phase_OBUF[13]_inst/O
@@ -1909,7 +1921,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[14]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[14]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[14]
                             (output port)
@@ -1934,10 +1946,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[14]/C
+                         net (fo=872, unplaced)       0.584     2.467    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[14]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[12].STAGE/phase_out_reg[14]/Q
+                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[13].STAGE/phase_out_reg[14]/Q
                          net (fo=1, unplaced)         0.800     3.723    phase_OBUF[14]
                                                                       r  phase_OBUF[14]_inst/I
                          OBUF (Prop_obuf_I_O)         2.820     6.543 r  phase_OBUF[14]_inst/O
@@ -1946,7 +1958,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[15]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[15]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[15]
                             (output port)
@@ -1971,10 +1983,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[15]/C
+                         net (fo=872, unplaced)       0.584     2.467    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[15]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[12].STAGE/phase_out_reg[15]/Q
+                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[13].STAGE/phase_out_reg[15]/Q
                          net (fo=1, unplaced)         0.800     3.723    phase_OBUF[15]
                                                                       r  phase_OBUF[15]_inst/I
                          OBUF (Prop_obuf_I_O)         2.820     6.543 r  phase_OBUF[15]_inst/O
@@ -1983,7 +1995,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[16]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[16]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[16]
                             (output port)
@@ -2008,10 +2020,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[16]/C
+                         net (fo=872, unplaced)       0.584     2.467    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[16]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[12].STAGE/phase_out_reg[16]/Q
+                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[13].STAGE/phase_out_reg[16]/Q
                          net (fo=1, unplaced)         0.800     3.723    phase_OBUF[16]
                                                                       r  phase_OBUF[16]_inst/I
                          OBUF (Prop_obuf_I_O)         2.820     6.543 r  phase_OBUF[16]_inst/O
@@ -2020,7 +2032,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[17]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[17]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[17]
                             (output port)
@@ -2045,10 +2057,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[17]/C
+                         net (fo=872, unplaced)       0.584     2.467    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[17]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[12].STAGE/phase_out_reg[17]/Q
+                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[13].STAGE/phase_out_reg[17]/Q
                          net (fo=1, unplaced)         0.800     3.723    phase_OBUF[17]
                                                                       r  phase_OBUF[17]_inst/I
                          OBUF (Prop_obuf_I_O)         2.820     6.543 r  phase_OBUF[17]_inst/O
@@ -2057,7 +2069,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[18]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[18]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[18]
                             (output port)
@@ -2082,10 +2094,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.800     1.782    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.101     1.883 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.584     2.467    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[18]/C
+                         net (fo=872, unplaced)       0.584     2.467    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[18]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[12].STAGE/phase_out_reg[18]/Q
+                         FDRE (Prop_fdre_C_Q)         0.456     2.923 r  GEN[13].STAGE/phase_out_reg[18]/Q
                          net (fo=1, unplaced)         0.800     3.723    phase_OBUF[18]
                                                                       r  phase_OBUF[18]_inst/I
                          OBUF (Prop_obuf_I_O)         2.820     6.543 r  phase_OBUF[18]_inst/O
@@ -2100,7 +2112,7 @@ Slack:                    inf
 Min Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[0]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[0]
                             (output port)
@@ -2125,10 +2137,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[0]/C
+                         net (fo=872, unplaced)       0.114     0.688    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[0]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[12].STAGE/phase_out_reg[0]/Q
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[13].STAGE/phase_out_reg[0]/Q
                          net (fo=1, unplaced)         0.337     1.166    phase_OBUF[0]
                                                                       r  phase_OBUF[0]_inst/I
                          OBUF (Prop_obuf_I_O)         1.216     2.382 r  phase_OBUF[0]_inst/O
@@ -2137,7 +2149,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[10]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[10]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[10]
                             (output port)
@@ -2162,10 +2174,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[10]/C
+                         net (fo=872, unplaced)       0.114     0.688    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[10]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[12].STAGE/phase_out_reg[10]/Q
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[13].STAGE/phase_out_reg[10]/Q
                          net (fo=1, unplaced)         0.337     1.166    phase_OBUF[10]
                                                                       r  phase_OBUF[10]_inst/I
                          OBUF (Prop_obuf_I_O)         1.216     2.382 r  phase_OBUF[10]_inst/O
@@ -2174,7 +2186,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[11]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[11]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[11]
                             (output port)
@@ -2199,10 +2211,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[11]/C
+                         net (fo=872, unplaced)       0.114     0.688    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[11]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[12].STAGE/phase_out_reg[11]/Q
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[13].STAGE/phase_out_reg[11]/Q
                          net (fo=1, unplaced)         0.337     1.166    phase_OBUF[11]
                                                                       r  phase_OBUF[11]_inst/I
                          OBUF (Prop_obuf_I_O)         1.216     2.382 r  phase_OBUF[11]_inst/O
@@ -2211,7 +2223,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[12]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[12]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[12]
                             (output port)
@@ -2236,10 +2248,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[12]/C
+                         net (fo=872, unplaced)       0.114     0.688    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[12]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[12].STAGE/phase_out_reg[12]/Q
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[13].STAGE/phase_out_reg[12]/Q
                          net (fo=1, unplaced)         0.337     1.166    phase_OBUF[12]
                                                                       r  phase_OBUF[12]_inst/I
                          OBUF (Prop_obuf_I_O)         1.216     2.382 r  phase_OBUF[12]_inst/O
@@ -2248,7 +2260,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[13]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[13]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[13]
                             (output port)
@@ -2273,10 +2285,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[13]/C
+                         net (fo=872, unplaced)       0.114     0.688    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[13]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[12].STAGE/phase_out_reg[13]/Q
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[13].STAGE/phase_out_reg[13]/Q
                          net (fo=1, unplaced)         0.337     1.166    phase_OBUF[13]
                                                                       r  phase_OBUF[13]_inst/I
                          OBUF (Prop_obuf_I_O)         1.216     2.382 r  phase_OBUF[13]_inst/O
@@ -2285,7 +2297,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[14]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[14]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[14]
                             (output port)
@@ -2310,10 +2322,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[14]/C
+                         net (fo=872, unplaced)       0.114     0.688    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[14]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[12].STAGE/phase_out_reg[14]/Q
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[13].STAGE/phase_out_reg[14]/Q
                          net (fo=1, unplaced)         0.337     1.166    phase_OBUF[14]
                                                                       r  phase_OBUF[14]_inst/I
                          OBUF (Prop_obuf_I_O)         1.216     2.382 r  phase_OBUF[14]_inst/O
@@ -2322,7 +2334,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[15]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[15]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[15]
                             (output port)
@@ -2347,10 +2359,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[15]/C
+                         net (fo=872, unplaced)       0.114     0.688    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[15]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[12].STAGE/phase_out_reg[15]/Q
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[13].STAGE/phase_out_reg[15]/Q
                          net (fo=1, unplaced)         0.337     1.166    phase_OBUF[15]
                                                                       r  phase_OBUF[15]_inst/I
                          OBUF (Prop_obuf_I_O)         1.216     2.382 r  phase_OBUF[15]_inst/O
@@ -2359,7 +2371,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[16]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[16]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[16]
                             (output port)
@@ -2384,10 +2396,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[16]/C
+                         net (fo=872, unplaced)       0.114     0.688    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[16]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[12].STAGE/phase_out_reg[16]/Q
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[13].STAGE/phase_out_reg[16]/Q
                          net (fo=1, unplaced)         0.337     1.166    phase_OBUF[16]
                                                                       r  phase_OBUF[16]_inst/I
                          OBUF (Prop_obuf_I_O)         1.216     2.382 r  phase_OBUF[16]_inst/O
@@ -2396,7 +2408,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[17]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[17]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[17]
                             (output port)
@@ -2421,10 +2433,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[17]/C
+                         net (fo=872, unplaced)       0.114     0.688    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[17]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[12].STAGE/phase_out_reg[17]/Q
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[13].STAGE/phase_out_reg[17]/Q
                          net (fo=1, unplaced)         0.337     1.166    phase_OBUF[17]
                                                                       r  phase_OBUF[17]_inst/I
                          OBUF (Prop_obuf_I_O)         1.216     2.382 r  phase_OBUF[17]_inst/O
@@ -2433,7 +2445,7 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 GEN[12].STAGE/phase_out_reg[18]/C
+  Source:                 GEN[13].STAGE/phase_out_reg[18]/C
                             (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            phase[18]
                             (output port)
@@ -2458,10 +2470,10 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.337     0.548    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.026     0.574 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.114     0.688    GEN[12].STAGE/CLK
-                         FDRE                                         r  GEN[12].STAGE/phase_out_reg[18]/C
+                         net (fo=872, unplaced)       0.114     0.688    GEN[13].STAGE/CLK
+                         FDRE                                         r  GEN[13].STAGE/phase_out_reg[18]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[12].STAGE/phase_out_reg[18]/Q
+                         FDRE (Prop_fdre_C_Q)         0.141     0.829 r  GEN[13].STAGE/phase_out_reg[18]/Q
                          net (fo=1, unplaced)         0.337     1.166    phase_OBUF[18]
                                                                       r  phase_OBUF[18]_inst/I
                          OBUF (Prop_obuf_I_O)         1.216     2.382 r  phase_OBUF[18]_inst/O
@@ -2478,13 +2490,52 @@ Path Group:  (none)
 From Clock:  
   To Clock:  CORDIC_clk
 
-Max Delay           836 Endpoints
-Min Delay           836 Endpoints
+Max Delay           904 Endpoints
+Min Delay           904 Endpoints
 --------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rst
+                            (input port)
+  Destination:            PRE_ROT/phase_offset_reg[14]/D
+                            (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        1.906ns  (logic 1.106ns (58.045%)  route 0.800ns (41.955%))
+  Logic Levels:           2  (IBUF=1 LUT3=1)
+  Clock Path Skew:        2.138ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.138ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 f  rst (IN)
+                         net (fo=0)                   0.000     0.000    rst
+                                                                      f  rst_IBUF_inst/I
+                         IBUF (Prop_ibuf_I_O)         0.982     0.982 f  rst_IBUF_inst/O
+                         net (fo=872, unplaced)       0.800     1.782    PRE_ROT/rst_IBUF
+                                                                      f  PRE_ROT/phase_offset[14]_i_1/I2
+                         LUT3 (Prop_lut3_I2_O)        0.124     1.906 r  PRE_ROT/phase_offset[14]_i_1/O
+                         net (fo=1, unplaced)         0.000     1.906    PRE_ROT/phase_offset[14]_i_1_n_0
+                         FDRE                                         r  PRE_ROT/phase_offset_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CORDIC_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+                                                                      r  clk_IBUF_inst/I
+                         IBUF (Prop_ibuf_I_O)         0.849     0.849 r  clk_IBUF_inst/O
+                         net (fo=1, unplaced)         0.760     1.608    clk_IBUF
+                                                                      r  clk_IBUF_BUFG_inst/I
+                         BUFG (Prop_bufg_I_O)         0.091     1.699 r  clk_IBUF_BUFG_inst/O
+                         net (fo=872, unplaced)       0.439     2.138    PRE_ROT/CLK
+                         FDRE                                         r  PRE_ROT/phase_offset_reg[14]/C
+
 Slack:                    inf
   Source:                 rst
                             (input port)
@@ -2505,7 +2556,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.982     0.982 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.800     1.782    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.800     1.782    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[0]/R
   -------------------------------------------------------------------    -------------------
 
@@ -2518,7 +2569,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.760     1.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     1.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[0]/C
 
 Slack:                    inf
@@ -2541,7 +2592,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.982     0.982 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.800     1.782    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.800     1.782    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[10]/R
   -------------------------------------------------------------------    -------------------
 
@@ -2554,7 +2605,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.760     1.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     1.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[10]/C
 
 Slack:                    inf
@@ -2577,7 +2628,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.982     0.982 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.800     1.782    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.800     1.782    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[11]/R
   -------------------------------------------------------------------    -------------------
 
@@ -2590,7 +2641,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.760     1.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     1.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[11]/C
 
 Slack:                    inf
@@ -2613,7 +2664,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.982     0.982 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.800     1.782    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.800     1.782    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[12]/R
   -------------------------------------------------------------------    -------------------
 
@@ -2626,7 +2677,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.760     1.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     1.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[12]/C
 
 Slack:                    inf
@@ -2649,7 +2700,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.982     0.982 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.800     1.782    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.800     1.782    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[13]/R
   -------------------------------------------------------------------    -------------------
 
@@ -2662,7 +2713,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.760     1.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     1.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[13]/C
 
 Slack:                    inf
@@ -2685,7 +2736,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.982     0.982 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.800     1.782    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.800     1.782    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[14]/R
   -------------------------------------------------------------------    -------------------
 
@@ -2698,7 +2749,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.760     1.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     1.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[14]/C
 
 Slack:                    inf
@@ -2721,7 +2772,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.982     0.982 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.800     1.782    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.800     1.782    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[15]/R
   -------------------------------------------------------------------    -------------------
 
@@ -2734,7 +2785,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.760     1.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     1.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[15]/C
 
 Slack:                    inf
@@ -2757,7 +2808,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.982     0.982 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.800     1.782    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.800     1.782    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[16]/R
   -------------------------------------------------------------------    -------------------
 
@@ -2770,7 +2821,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.760     1.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     1.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[16]/C
 
 Slack:                    inf
@@ -2793,7 +2844,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.982     0.982 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.800     1.782    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.800     1.782    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[17]/R
   -------------------------------------------------------------------    -------------------
 
@@ -2806,44 +2857,8 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.760     1.608    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.091     1.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[17]/C
-
-Slack:                    inf
-  Source:                 rst
-                            (input port)
-  Destination:            GEN[10].STAGE/phase_out_reg[18]/R
-                            (rising edge-triggered cell FDRE clocked by CORDIC_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             (none)
-  Path Type:              Setup (Max at Slow Process Corner)
-  Data Path Delay:        1.782ns  (logic 0.982ns (55.126%)  route 0.800ns (44.874%))
-  Logic Levels:           1  (IBUF=1)
-  Clock Path Skew:        2.138ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.138ns
-    Source Clock Delay      (SCD):    0.000ns
-    Clock Pessimism Removal (CPR):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                                                      0.000     0.000 r  rst (IN)
-                         net (fo=0)                   0.000     0.000    rst
-                                                                      r  rst_IBUF_inst/I
-                         IBUF (Prop_ibuf_I_O)         0.982     0.982 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.800     1.782    GEN[10].STAGE/SR[0]
-                         FDRE                                         r  GEN[10].STAGE/phase_out_reg[18]/R
-  -------------------------------------------------------------------    -------------------
-
-                         (clock CORDIC_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-                                                                      r  clk_IBUF_inst/I
-                         IBUF (Prop_ibuf_I_O)         0.849     0.849 r  clk_IBUF_inst/O
-                         net (fo=1, unplaced)         0.760     1.608    clk_IBUF
-                                                                      r  clk_IBUF_BUFG_inst/I
-                         BUFG (Prop_bufg_I_O)         0.091     1.699 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.439     2.138    GEN[10].STAGE/CLK
-                         FDRE                                         r  GEN[10].STAGE/phase_out_reg[18]/C
 
 
 
@@ -2871,7 +2886,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.211     0.211 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.337     0.548    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.337     0.548    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[0]/R
   -------------------------------------------------------------------    -------------------
 
@@ -2884,7 +2899,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[0]/C
 
 Slack:                    inf
@@ -2907,7 +2922,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.211     0.211 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.337     0.548    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.337     0.548    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[10]/R
   -------------------------------------------------------------------    -------------------
 
@@ -2920,7 +2935,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[10]/C
 
 Slack:                    inf
@@ -2943,7 +2958,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.211     0.211 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.337     0.548    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.337     0.548    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[11]/R
   -------------------------------------------------------------------    -------------------
 
@@ -2956,7 +2971,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[11]/C
 
 Slack:                    inf
@@ -2979,7 +2994,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.211     0.211 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.337     0.548    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.337     0.548    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[12]/R
   -------------------------------------------------------------------    -------------------
 
@@ -2992,7 +3007,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[12]/C
 
 Slack:                    inf
@@ -3015,7 +3030,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.211     0.211 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.337     0.548    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.337     0.548    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[13]/R
   -------------------------------------------------------------------    -------------------
 
@@ -3028,7 +3043,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[13]/C
 
 Slack:                    inf
@@ -3051,7 +3066,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.211     0.211 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.337     0.548    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.337     0.548    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[14]/R
   -------------------------------------------------------------------    -------------------
 
@@ -3064,7 +3079,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[14]/C
 
 Slack:                    inf
@@ -3087,7 +3102,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.211     0.211 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.337     0.548    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.337     0.548    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[15]/R
   -------------------------------------------------------------------    -------------------
 
@@ -3100,7 +3115,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[15]/C
 
 Slack:                    inf
@@ -3123,7 +3138,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.211     0.211 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.337     0.548    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.337     0.548    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[16]/R
   -------------------------------------------------------------------    -------------------
 
@@ -3136,7 +3151,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[16]/C
 
 Slack:                    inf
@@ -3159,7 +3174,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.211     0.211 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.337     0.548    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.337     0.548    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[17]/R
   -------------------------------------------------------------------    -------------------
 
@@ -3172,7 +3187,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[17]/C
 
 Slack:                    inf
@@ -3195,7 +3210,7 @@ Slack:                    inf
                          net (fo=0)                   0.000     0.000    rst
                                                                       r  rst_IBUF_inst/I
                          IBUF (Prop_ibuf_I_O)         0.211     0.211 r  rst_IBUF_inst/O
-                         net (fo=804, unplaced)       0.337     0.548    GEN[10].STAGE/SR[0]
+                         net (fo=872, unplaced)       0.337     0.548    GEN[10].STAGE/rst_IBUF
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[18]/R
   -------------------------------------------------------------------    -------------------
 
@@ -3208,7 +3223,7 @@ Slack:                    inf
                          net (fo=1, unplaced)         0.355     0.755    clk_IBUF
                                                                       r  clk_IBUF_BUFG_inst/I
                          BUFG (Prop_bufg_I_O)         0.029     0.784 r  clk_IBUF_BUFG_inst/O
-                         net (fo=804, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
+                         net (fo=872, unplaced)       0.259     1.043    GEN[10].STAGE/CLK
                          FDRE                                         r  GEN[10].STAGE/phase_out_reg[18]/C
 
 

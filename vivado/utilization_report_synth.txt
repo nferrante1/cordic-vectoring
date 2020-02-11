@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2.1 (win64) Build 2729669 Thu Dec  5 04:49:17 MST 2019
-| Date         : Tue Feb 11 14:28:50 2020
+| Date         : Tue Feb 11 18:24:25 2020
 | Host         : Win7VM running 64-bit Service Pack 1  (build 7601)
 | Command      : report_utilization -file Z:/cordic-vectoring/vivado/utilization_report_synth.txt -name utilization_1
 | Design       : cordic
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  736 |     0 |     17600 |  4.18 |
-|   LUT as Logic          |  736 |     0 |     17600 |  4.18 |
+| Slice LUTs*             |  795 |     0 |     17600 |  4.52 |
+|   LUT as Logic          |  795 |     0 |     17600 |  4.52 |
 |   LUT as Memory         |    0 |     0 |      6000 |  0.00 |
-| Slice Registers         |  804 |     0 |     35200 |  2.28 |
-|   Register as Flip Flop |  804 |     0 |     35200 |  2.28 |
+| Slice Registers         |  872 |     0 |     35200 |  2.48 |
+|   Register as Flip Flop |  872 |     0 |     35200 |  2.48 |
 |   Register as Latch     |    0 |     0 |     35200 |  0.00 |
 | F7 Muxes                |    0 |     0 |      8800 |  0.00 |
 | F8 Muxes                |    0 |     0 |      4400 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 804   |          Yes |       Reset |            - |
+| 872   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -146,14 +146,15 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  804 |        Flop & Latch |
-| LUT3     |  426 |                 LUT |
-| LUT2     |  284 |                 LUT |
-| CARRY4   |  200 |          CarryLogic |
-| LUT1     |   56 |                 LUT |
+| FDRE     |  872 |        Flop & Latch |
+| LUT3     |  454 |                 LUT |
+| LUT2     |  309 |                 LUT |
+| CARRY4   |  217 |          CarryLogic |
+| LUT1     |   61 |                 LUT |
 | OBUF     |   40 |                  IO |
 | IBUF     |   34 |                  IO |
-| LUT4     |   17 |                 LUT |
+| LUT4     |   16 |                 LUT |
+| LUT5     |    1 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 

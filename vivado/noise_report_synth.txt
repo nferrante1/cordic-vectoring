@@ -1,6 +1,6 @@
 # Simultaneously Switching Noise (SSN) Report
 # Version: 1.0
-# Created on: Tue Feb 11 14:29:44 2020
+# Created on: Tue Feb 11 18:24:05 2020
 # Result Name: ssn_1
 # Project Name: cordic
 # Project Family: Zynq-7000
