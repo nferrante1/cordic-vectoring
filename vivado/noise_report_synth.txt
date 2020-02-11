@@ -1,0 +1,59 @@
+# Simultaneously Switching Noise (SSN) Report
+# Version: 1.0
+# Created on: Tue Feb 11 14:29:44 2020
+# Result Name: ssn_1
+# Project Name: cordic
+# Project Family: Zynq-7000
+# Part: xc7z010clg400
+# Temperature Grade: commercial
+# SSN Data Version: Production
+# Package Version: FINAL 2012-10-23
+# Package Pin Delay Version: VERS. 2.0 2012-10-23
+
+IO Bank,VCCO,Signal Name,Pin Number,IO Standard,Drive (mA),Slew Rate,OFFCHIP_TERM,Remaining Margin (%),Result, Notes
+,1.8,phase[0],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[1],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[2],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[3],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[4],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[5],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[6],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[7],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[8],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[9],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[10],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[11],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[12],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[13],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[14],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[15],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[16],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[17],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[18],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,phase[19],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[0],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[1],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[2],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[3],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[4],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[5],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[6],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[7],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[8],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[9],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[10],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[11],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[12],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[13],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[14],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[15],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[16],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[17],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[18],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+,1.8,radius[19],,LVCMOS18,12,SLOW,FP_VTT_50,,FAIL,CRITICAL WARNING - Unplaced port
+
+
+# Reference Links
+# Safe to Ignore SSN Failure on MIG Designs - http://www.xilinx.com/support/answers/36141.htm
+# SSN Mitigation Strategy - http://www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf#search=%22Mitigate%22
+# Off-chip Terminations - http://www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf#search=%22terminated%22
