@@ -21,6 +21,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{interval}
 \RequirePackage{array}
+\RequirePackage{cancel}
 \RequirePackage{makecell}
 \RequirePackage[inline]{enumitem}
 \RequirePackage{listings}
@@ -61,6 +62,8 @@
 
 \renewcommand{\author}[1]{\def\@author{#1}}
 \renewcommand{\title}[1]{\def\@title{#1}}
+
+\renewcommand{\CancelColor}{\color{red}}
 
 \newcommand{\createtablerow}[1]{#1\\}
 

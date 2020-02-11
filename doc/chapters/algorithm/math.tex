@@ -11,3 +11,121 @@ we can compute the rotated vector as shown in~\eqref{eq:rotatedvector}.
 		y_1 = x_0\sin\theta + y_0\cos\theta
 	\end{cases}
 \end{equation}
+
+We can take out the factor \(\cos\theta\) and rewrite
+the~\eqref{eq:rotatedvector} as shown in~\eqref{eq:rotatedvector2}.
+
+\begin{equation}\label{eq:rotatedvector2}
+	\begin{cases}
+		x_1 = \cancel{\cos\theta}(x_0 - y_0\tan\theta)\\
+		y_1 = \cancel{\cos\theta}(y_0 + x_0\tan\theta)
+	\end{cases}
+\end{equation}
+
+We cancel out the \(\cos\theta\) to approximate the value: instead of making a
+real rotation we do a \emph{pseudo-rotation}. Thus, the result of this rotation
+will be scaled of a factor \(\frac{1}{\cos\theta} > 1\).
+
+There's no a mathematical justification for dropping \(\cos\theta\) but the
+reason we do this is that the algorithm is simplified and requires only sums and
+subtractions. Moreover, it's possible to get back to the correct non-scaled
+value by multiplying the vector by \(\frac{1}{A_n}\), where \(A_n\) is the scale
+factor defined as in~\eqref{eq:scalefactor}.
+
+\begin{equation}\label{eq:scalefactor}
+	A_n = \prod_{i=0}^{n-1} \frac{1}{\cos\theta_i}
+\end{equation}
+
+The scale factor depends only on the number of iterations \(n\) performed by the
+algorithm.
+
+If we take angles \(\theta_i\) such that \(\tan\theta_i = 2^{-i}\) we can
+rewrite the~\eqref{eq:rotatedvector2} as shown in~\eqref{eq:rotatedvector3}.
+
+\begin{equation}\label{eq:rotatedvector3}
+	\begin{cases}
+		x_1 = x_0 - y_0 2^{-i}\\
+		y_1 = y_0 + x_0 2^{-i}
+	\end{cases}
+\end{equation}
+
+And the scale factor of the~\eqref{eq:scalefactor} can be rewritten as shown
+in~\eqref{eq:scalefactor2}.
+
+\begin{equation}\label{eq:scalefactor2}
+	A_n = \prod_{i=0}^{n-1} \sqrt{1 + 2^{-2i}}
+\end{equation}
+
+Iteratively, the pseudo-rotation shown in~\eqref{eq:rotatedvector3} can be
+written as shown in~\eqref{eq:iterative}.
+
+\begin{equation}\label{eq:iterative}
+	\begin{cases}
+		x_{i+1} = x_i - d_i(2^{-i}y_i)\\
+		y_{i+1} = y_i + d_i(2^{-i}x_i)
+	\end{cases}
+\end{equation}
+
+Where \(d_i \in \{-1, +1\}\) is a decision operator that is used to choose the
+direction of rotation (\(-1\) clockwise, \(+1\) anticlockwise). \(d_i\) is equal
+to \(-1\) when \(y < 0\) and equal to \(+1\) otherwise\footnote{As said for the
+decision operator is valid only when \cordic{} is used in \emph{Vectoring
+Mode}. In this document this is the only mode we will discuss.}.
+
+\cordic{} needs also to keep track of the accumulative angle rotated at each
+iteration. The iterative relation shown in~\eqref{eq:angleaccumulator} serves
+this purpose.
+
+\begin{equation}\label{eq:angleaccumulator}
+	z_{i+1} = z_i - d_i\theta_i
+\end{equation}
+
+The final iterative relations of \cordic{} are shown in~\eqref{eq:cordic}.
+
+\begin{equation}\label{eq:cordic}
+	\begin{cases}
+		x_{i+1} = x_i - d_i(2^{-i}y_i)\\
+		y_{i+1} = y_i + d_i(2^{-i}x_i)\\
+		z_{i+1} = z_i - d_i\theta_i
+	\end{cases}
+\end{equation}
+
+The initial values of \(x_0, y_0\) are the Cartesian coordinates of the
+point, and \(z_0 = 0\).
+
+The~\eqref{eq:cordic} converges only if the point is in the
+1\textsuperscript{st} or 4\textsuperscript{th} quadrant of the Cartesian plane.
+For this purpose, when \(x < 0\), \cordic{} needs to pre-rotate the input vector
+using the~\eqref{eq:prerotation}.
+
+\begin{equation}\label{eq:prerotation}
+	\begin{array}{ll}
+		\begin{cases}
+			z_0 = 0\\
+			x_0 = x_0\\
+			y_0 = y_0
+		\end{cases} & x \ge 0\\
+		\begin{cases}
+			z_0 = \pi\\
+			x_0 = -x_0\\
+			y_0 = -y_0
+		\end{cases} & x < 0 \land y \ge 0\\
+		\begin{cases}
+			z_0 = -\pi\\
+			x_0 = -x_0\\
+			y_0 = -y_0
+		\end{cases} & x < 0 \land y < 0
+	\end{array}
+\end{equation}
+
+The~\eqref{eq:cordic} converges to the values shown
+in~\eqref{eq:cordicconvergence}\footnote{\(n-1\) is the n\textsuperscript{th}
+iteration (the last) since we start from \(0\).}.
+
+\begin{equation}\label{eq:cordicconvergence}
+	\begin{cases}
+		x_{n-1} = A_n \sqrt{x_0^2 + y_0^2}\\
+		y_{n-1} = 0\\
+		z_{n-1} = \arctan\frac{y_0}{x_0}
+	\end{cases}
+\end{equation}
