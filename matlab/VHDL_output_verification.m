@@ -36,5 +36,5 @@ error_phase_vhdl = sqrt((compare_phase - phase_vhdl).^2);
 quantized2vhdl_error_radius = error_radius_q - error_radius_vhdl;
 quantized2vhdl_error_phase = error_phase_q - error_phase_vhdl;
 
-has_implementation_error_radius = max(max(quantized2vhdl_error_radius));
-has_implementation_error_phase = max(max(quantized2vhdl_error_phase));
+has_implementation_error_radius = max(max(abs(quantized2vhdl_error_radius)));
+has_implementation_error_phase = max(max(abs(quantized2vhdl_error_phase)));

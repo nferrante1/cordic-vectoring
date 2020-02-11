@@ -12,7 +12,7 @@ use IEEE.numeric_std.all;
 		-- pipeline_stages in/out dimensioning
 
 --CORDIC entity---------------------------------------------
-entity cordic is generic(stages: INTEGER := 13; in_wordlength: INTEGER := 16; out_wordlength: INTEGER := 20);
+entity cordic is generic(stages: INTEGER := 14; in_wordlength: INTEGER := 16; out_wordlength: INTEGER := 20);
 	port(
 		-- Input x,y
 		x_in:	in std_logic_vector(in_wordlength-1 downto 0);
@@ -62,10 +62,11 @@ end component pre_rotation;
 -- signals towards the pipeline stages
 type angles_t is array(0 to stages-1) of INTEGER;
 constant angles : angles_t := (
-	4096,
-	2418,
-	1277,
-	648,
+	8191,
+	4835,
+	2555,
+	1297,
+	651,
 	325,
 	162,
 	81,

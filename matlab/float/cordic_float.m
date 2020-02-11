@@ -17,7 +17,7 @@ end
 wordlength = 16;
 
 % steps_number --> number of steps for cordic
-steps_number = 13;
+steps_number = 14;
 %--------------------------------------------------------------------------
 
 %-------------Generate input values----------------------------------------

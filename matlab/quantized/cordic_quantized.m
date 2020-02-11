@@ -17,8 +17,8 @@ end
 in_wordlength = 16;
 
 % steps --> number of steps for cordic
-steps = 13;
-% We choose 13 because the elementary angles, when quantized, are 0 after
+steps = 14;
+% We choose 14 because the elementary angles, when quantized, are 0 after
 % the 13th value (2^-12 --> 1, 2^-13 --> 0). So with 16 bit inputs 13 steps
 % of cordic are sufficient
 %--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ y = r' * sin(theta);
 
 %-------------Quantize input values----------------------------------------
 % Compute LSB value
-in_lsb = max(max(x))/2^((in_wordlength-1)-1);
+in_lsb = 1/(2^(in_wordlength-1)-1);
 % Quantize inputs
 x_q = floor(x./in_lsb);
 y_q = floor(y./in_lsb);
@@ -49,7 +49,7 @@ angles = atan(angles_generator); % Generate elementary angles
 
 %-------------Quantize angles values---------------------------------------
 % Compute LSB value
-phase_lsb = pi / 2^((in_wordlength-1)-1);
+phase_lsb = pi / (2^(in_wordlength-1)-1);
 % Quantize angles
 angles_q = floor(angles./phase_lsb);
 

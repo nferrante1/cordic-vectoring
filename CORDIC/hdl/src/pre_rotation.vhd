@@ -54,12 +54,12 @@ begin
 
 					if( y_signed < to_signed(0, y_signed'length)) then
 						-- We're in 3rd quadrant
-						phase_offset(out_wordlength-1 downto 0) <= std_logic_vector(to_signed(-16384, out_wordlength));
-						-- -16384 is the quantized representation of -pi
+						phase_offset(out_wordlength-1 downto 0) <= std_logic_vector(to_signed(-32767, out_wordlength));
+						-- -32767 is the quantized representation of -pi
 
 					else -- We're in 2rd quadrant
-						phase_offset(out_wordlength-1 downto 0) <= std_logic_vector(to_signed(16384, out_wordlength));
-						-- 16384 is the quantized representation of pi
+						phase_offset(out_wordlength-1 downto 0) <= std_logic_vector(to_signed(32767, out_wordlength));
+						-- 32767 is the quantized representation of pi
 					end if;
 				else -- No need to rotate
 					phase_offset(out_wordlength-1 downto 0) <= (others => '0');

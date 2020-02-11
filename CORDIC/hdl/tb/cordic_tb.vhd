@@ -13,14 +13,14 @@ end cordic_tb;
 
 architecture bhv of cordic_tb is
 --Constants-------------------------------------------------
-constant stages		: integer := 13; -- Number of stages
+constant stages		: integer := 14; -- Number of stages
 constant in_wordlength	: integer := 16; -- Size of input words
 constant out_wordlength	: integer := 20; -- Size of output words
 constant rst_time	: integer := 15; -- Reset time (clock duration)
 
 -- Clocks needed to fill/flush pipeline
-constant filling_clk	:integer := 15;
-	-- 13 --> pipeline stages
+constant filling_clk	:integer := 16;
+	-- 14 --> pipeline stages
 	-- 1 --> pre_rotation
 	-- 1 --> input
 
@@ -36,7 +36,7 @@ constant t_clk		: time    := 10 ns;
 
 --Testbench signals-----------------------------------------
 -- Used to visualize number of data read from file
-signal data_counter	: integer := - rst_time - 1;
+signal data_counter	: integer := - filling_clk - 1;
 -- Initialization takes in account the clocks consumed to fill the pipeline
 
 -- Clock and reset signals
@@ -134,7 +134,7 @@ begin
 			elsif(rising_edge(clk)) then
 				-- Retrieve data from file and send it into input
 				-- signals
-				if ((not endfile(fptr_x )) or (not endfile(fptr_y ))) then -- There is still data to read
+				if ((not endfile(fptr_x)) or (not endfile(fptr_y))) then -- There is still data to read
 					-- X
 					readline(fptr_x, file_line_x);
 					read(file_line_x, x_data);
@@ -145,15 +145,6 @@ begin
 					y_in <= std_logic_vector(to_signed(y_data, in_wordlength));
 
 					data_counter <= data_counter + 1;
-					if(data_counter >= 0) then
-						-- Reset is finished start writing to file
-						--Radius
-						write(file_line_r, to_integer(signed(r_out)));
-						writeline(fptr_r, file_line_r);
-						--Phase
-						write(file_line_p, to_integer(signed(p_out)));
-						writeline(fptr_p, file_line_p);
-					end if;
 				else -- All data has been read
 					-- Stop after writing all values remaining in
 					-- pipeline
@@ -164,6 +155,15 @@ begin
 					file_close(fptr_y);
 					file_close(fptr_x);
 					file_close(fptr_y);
+				end if;
+				if(data_counter >= 0) then
+					-- Reset is finished start writing to file
+					-- Radius
+					write(file_line_r, to_integer(signed(r_out)));
+					writeline(fptr_r, file_line_r);
+					-- Phase
+					write(file_line_p, to_integer(signed(p_out)));
+					writeline(fptr_p, file_line_p);
 				end if;
 			end if;
 	end process; -- get_data_proc
