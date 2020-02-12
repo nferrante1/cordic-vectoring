@@ -1,0 +1,18 @@
+\section{Warning Messages}\label{sec:warnings}
+
+During the synthesis and implementation processes, \vivado* has reported some
+warnings. We will now explain the reason for each one of them.
+\begin{description}
+	\item[Constraints 18--5210: No constraints selected for write]\hfill\\
+		As said during laboratory lectures, this warning can be
+		ignored.
+	\item[NSTD--1 Critical Warning Unspecified I/O Standard]\hfill\\
+		This warning arise because we have not specified how the output
+		or input must be provided from/to the board.
+	\item[UCIO--1 Critical Warning Unconstrained Logical Port]\hfill\\
+		This warning arise because we have not specified the pin
+		placement, leaving all the job to \vivado*.
+	\item[ZPS7--1 Warning PS7 block required]\hfill\\
+		This warning, like the previous one, arise because no pin
+		placement specification have been provided to the tool.
+\end{description}
