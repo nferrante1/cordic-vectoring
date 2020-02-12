@@ -1,0 +1,140 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2019.2.1 (win64) Build 2729669 Thu Dec  5 04:49:17 MST 2019
+| Date             : Tue Feb 11 18:26:50 2020
+| Host             : Win7VM running 64-bit Service Pack 1  (build 7601)
+| Command          : report_power -file Z:/cordic-vectoring/vivado/power_report_impl.txt -name power_1
+| Design           : cordic
+| Device           : xc7z010clg400-1
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+---------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 0.172        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 0.079        |
+| Device Static (W)        | 0.092        |
+| Effective TJA (C/W)      | 11.5         |
+| Max Ambient (C)          | 83.0         |
+| Junction Temperature (C) | 27.0         |
+| Confidence Level         | Low          |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++----------------+-----------+----------+-----------+-----------------+
+| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
++----------------+-----------+----------+-----------+-----------------+
+| Clocks         |     0.006 |        3 |       --- |             --- |
+| Slice Logic    |     0.013 |     1958 |       --- |             --- |
+|   LUT as Logic |     0.010 |      794 |     17600 |            4.51 |
+|   CARRY4       |     0.002 |      217 |      4400 |            4.93 |
+|   Register     |     0.001 |      872 |     35200 |            2.48 |
+|   Others       |     0.000 |       29 |       --- |             --- |
+| Signals        |     0.013 |     1172 |       --- |             --- |
+| I/O            |     0.047 |       74 |       100 |           74.00 |
+| Static Power   |     0.092 |          |           |                 |
+| Total          |     0.172 |          |           |                 |
++----------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Budget (A)  | Margin (A) |
++-----------+-------------+-----------+-------------+------------+-------------+------------+
+| Vccint    |       1.000 |     0.036 |       0.033 |      0.004 | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.009 |       0.004 |      0.005 | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 | Unspecified | NA         |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 | Unspecified | NA         |
+| Vcco18    |       1.800 |     0.023 |       0.022 |      0.001 | Unspecified | NA         |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 | Unspecified | NA         |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 | Unspecified | NA         |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 | Unspecified | NA         |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 | Unspecified | NA         |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 | Unspecified | NA         |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 | Unspecified | NA         |
+| MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 | Unspecified | NA         |
+| Vccpint   |       1.000 |     0.017 |       0.000 |      0.017 | Unspecified | NA         |
+| Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 | Unspecified | NA         |
+| Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 | Unspecified | NA         |
+| Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 | Unspecified | NA         |
+| Vcco_mio0 |       1.800 |     0.000 |       0.000 |      0.000 | Unspecified | NA         |
+| Vcco_mio1 |       1.800 |     0.000 |       0.000 |      0.000 | Unspecified | NA         |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 | Unspecified | NA         |
++-----------+-------------+-----------+-------------+------------+-------------+------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+------------------------+
+| Ambient Temp (C)      | 25.0                   |
+| ThetaJA (C/W)         | 11.5                   |
+| Airflow (LFM)         | 250                    |
+| Heat Sink             | none                   |
+| ThetaSA (C/W)         | 0.0                    |
+| Board Selection       | medium (10"x10")       |
+| # of Board Layers     | 8to11 (8 to 11 Layers) |
+| Board Temperature (C) | 25.0                   |
++-----------------------+------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++------------+--------+-----------------+
+| Clock      | Domain | Constraint (ns) |
++------------+--------+-----------------+
+| CORDIC_clk | clk    |             8.0 |
++------------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++-----------------+-----------+
+| Name            | Power (W) |
++-----------------+-----------+
+| cordic          |     0.079 |
+|   GEN[10].STAGE |     0.002 |
+|   GEN[11].STAGE |     0.002 |
+|   GEN[12].STAGE |     0.001 |
+|   GEN[13].STAGE |     0.001 |
+|   GEN[1].STAGE  |     0.002 |
+|   GEN[2].STAGE  |     0.002 |
+|   GEN[3].STAGE  |     0.002 |
+|   GEN[4].STAGE  |     0.002 |
+|   GEN[5].STAGE  |     0.002 |
+|   GEN[6].STAGE  |     0.002 |
+|   GEN[7].STAGE  |     0.002 |
+|   GEN[8].STAGE  |     0.002 |
+|   GEN[9].STAGE  |     0.002 |
+|   PRE_ROT       |     0.002 |
+|   STAGE_0       |     0.003 |
++-----------------+-----------+
+
+

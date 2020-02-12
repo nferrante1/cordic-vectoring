@@ -1,1 +1,18 @@
 \chapter{Conclusions}\label{ch:conclusions}
+
+To conclude we make some consideration on our results.
+
+The synthesis has been done in a fully automatized way, we have left all the
+control to the tool, so what can be done to improve the results obtained is to
+proceed in an iterative way, giving to \vivado{} everytime higher clock
+frequency in order to find the effective maximum clock frequency. Another
+consideration is to use other synthesis strategies provided by the tool, for
+example we can use a synthesis strategy for high performance, or reduced power
+consumption, depending on our constraints.
+
+A good result instead cames out from the VHDL model verification, we can see
+that using 20-bits output we can achieve a precision of \(10^{-4}\) on radius
+and phase calculation. This give us the measure of the utility of \cordic{}
+algorithm, that allows constrained devices to perform computations that
+otherwise would be unfeasible, due to power or area demand of a traditional
+arithmetic and logic unit.

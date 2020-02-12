@@ -58,9 +58,9 @@ corrected_radius = radius./gain;
 MSE_radius = mean((compare_radius - corrected_radius).^2, "all");
 MSE_phase = mean((compare_phase - phase).^2, "all");
 
-% Root squared errors
-error_radius = sqrt((compare_radius - corrected_radius).^2);
-error_phase = sqrt((compare_phase - phase).^2);
+% absolute errors
+error_radius = abs(compare_radius - corrected_radius);
+error_phase = abs(compare_phase - phase);
 
 % Max error
 max_error_radius = max(max(error_radius));

@@ -24,6 +24,8 @@
 \RequirePackage{cancel}
 \RequirePackage{makecell}
 \RequirePackage[inline]{enumitem}
+%\RequirePackage{spverbatim}
+\RequirePackage{fancyvrb}
 \RequirePackage{listings}
 \RequirePackage{nameref}
 \RequirePackage[english]{varioref}
@@ -136,6 +138,10 @@
 \WithSuffix\newcommand\exgratia*[1]{e.g.\ #1}
 \newcommand\etc{etc\textellipsis}
 \newcommand\vivado{\specialname{Xilinx Vivado}}
+\WithSuffix\newcommand\vivado*{\specialname{Vivado}}
+\newcommand\xilinx{\specialname{Xilinx}}
+\newcommand\zybo{\specialname{ZyBo}}
+\newcommand\zybomodel{\texttt{ZYNQ XC7Z010-1CLG400C-1}}
 \newcommand\modelsim{\specialname{ModelSIM}}
 \newcommand\matlab{\specialname{Matlab}}
 \newcommand\cordic{\texttt{CORDIC}}

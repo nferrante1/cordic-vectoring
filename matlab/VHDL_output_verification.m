@@ -28,9 +28,9 @@ corrected_radius_vhdl = radius_vhdl./gain;
 MSE_radius_vhdl = mean((compare_radius - corrected_radius_vhdl).^2, "all");
 MSE_phase_vhdl = mean((compare_phase - phase_vhdl).^2, "all");
 
-% Root squared errors
-error_radius_vhdl = sqrt((compare_radius - corrected_radius_vhdl).^2);
-error_phase_vhdl = sqrt((compare_phase - phase_vhdl).^2);
+% absolute errors
+error_radius_vhdl = abs(compare_radius - corrected_radius_vhdl);
+error_phase_vhdl = abs(compare_phase - phase_vhdl);
 
 % Difference between errors in matlab and VHDL, for VHDL
 % model goodness verification
