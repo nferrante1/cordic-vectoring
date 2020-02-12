@@ -1,1 +1,93 @@
 \chapter{Synthesis}\label{ch:synthesis}
+After the verification of the correctness of our VHDL model through \matlab{} 
+and \modelsim{} we can now proceed with the synthesis and implementation on the
+Xilinx's ZyBo Development Board using Xilinx Vivado.
+In this section we present the results of our synthesis in terms of resource
+utilization, timing and power consumption.
+
+Before to start the analysis of the results we want to clarify some assumption
+we have to make in order to correctly understand them:
+\begin{itemize}
+
+	\item The results are obtained running first the Synthesis, then the
+		Implementation on the board ZYNQ XC7Z010-1CLG400C-1, using the
+		default synthesis and strategy provided by Vivado.
+
+	\item The constraints file we've provided specifies only the desired
+		clock frequency of 125 MHz, this frequency has been choosen
+		without the purpose of a real implementation, just following the
+		hints provided during Laboratory lectures.
+
+	\item The pin placement is completely left to Vivado, no pin
+		specification has been provided before the Implementation.
+
+	\item The maximum clock frequecy obtained has been computed supposing
+		that, after the Implementation, Vivado has found the best
+		solution possible.
+\end{itemize}	
+\section{Timing}
+The first thing we are going to analyze is the timing report, produced after the
+implementation step, that effectively place the components choosen during the 
+synthesis on the board, thus we have a finer estimation, becouse we can take in
+account also routing delay.
+As we can see from \lstref{timingreport} all the timing constraints are met, and
+the Slack both for Clock period and Timing are positive, this means that we can
+drive the board to an higher clock frequency then the specified one. More
+precisely we can compute the Maximum clock frequency \(f_{max}\) as:
+		\[f_{max}= 1/(T_{clk} - WNS) = 222.518914 MHz \]
+Where \(T_{clk} = 8.000ns\) that is the period corresponding to 125 MHz.
+
+The \emph{Max Delay Path} is mostly determined by the routing delay as we can 
+see from the \lstref{timingreport}, and is in one of the stages of the pipeline 
+the \(7^{th}\) to be precise, the logic delay is mostly affected by the carry
+logic.
+
+\lstinputlisting[label={lst:timingreport},                                                                                            
+ caption={Timing report 
+ (\code{timing\_report\_impl.txt}).}]{vivado/timing_report.txt}    
+
+\section{Utilization}
+In the utilization report we can appreciate the fact that even if the pipeline
+architecture has an higher area consumption then the basic iterative
+implementation we use few resource with respect to the one available. Obviously
+given by the fact that we do not use any multiplier at the end of the algorithm 
+to scale-out the result is makes possible to save some resources,
+but several area reduction are also possible thanks to the hardwired shift
+operations at each stage and also thanks to the elimination of the ROM to store
+all the values of the elementary angles. As we can see in \lstref{utilreport}
+for each slice type we do not use more then 4.51\% of the available resources.
+
+The IO resources instead are highly used since we need 34 input pin  and 40 
+output pin.
+\lstinputlisting[label={lst:utilreport},                                                                                            
+ caption={Resource utilization report
+ (\code{utilization\_report.txt}).}]{vivado/utilization_report.txt}    
+
+\section{Power Consumption}
+Our implementation, as we can see in \lstref{powerreport} as a power consumption
+of 172mW, of which 79mW of dynamic power and 92 of static power. As we can see
+from the section 1.1 of the report the bigger part of dynamic power is consumed
+by the IO ports, where the inner logic as a global dynamic power consumption of
+only 32mW.
+\lstinputlisting[label={lst:powerreport},                                                                                            
+ caption={Power consumption report
+ (\code{power\_report.txt}).}]{vivado/power_report.txt}    
+
+
+\section {Warning Messages}
+During the synthesys and implementation process some warning messages have been
+shown from Vivado, we will now explain the reason for each one of them
+\begin{description}
+	\item[Constraints 18-5210: No constraints selected for write]
+		This message as said during laboratory lectures can be ignored
+	\item[NSTD-1 Critical Warning Unspecified I/O Standard]
+		This message arise because we have not specified how the output
+		or input must be provided from/to the board. 
+	\item[UCIO-1 Critical Warning Unconstrained Logical Port]
+		This message arise because we have not specified the pin
+		placement, leaving all the job to Vivado.
+	\item[ZPS7-1 Warning PS7 block required]
+		This message like the previous one arise becouse no pin
+		placement specification have been provided to the tool
+
+\end{description}
