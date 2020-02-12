@@ -100,7 +100,7 @@ corrected_radius_q = radius_q./gain;
 MSE_radius_q = mean((compare_radius - corrected_radius_q).^2, "all");
 MSE_phase_q = mean((compare_phase - phase_q).^2, "all");
 
-% Root squared errors
+% absolute errors
 error_radius_q = abs(compare_radius - corrected_radius_q);
 error_phase_q = abs(compare_phase - phase_q);
 
@@ -113,7 +113,7 @@ max_error_phase_q = max(max(error_phase_q));
 MSE_radius_fq = mean((corrected_radius - corrected_radius_q).^2, "all");
 MSE_phase_fq = mean((phase - phase_q).^2, "all");
 
-% Root squared errors (with float model)
+% absolute errors (with float model)
 error_radius_fq = abs(corrected_radius - corrected_radius_q);
 error_phase_fq = abs(phase - phase_q);
 %-----------------------------------------------------------
