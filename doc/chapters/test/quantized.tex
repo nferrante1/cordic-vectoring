@@ -17,12 +17,25 @@ gives us the opportunity to evaluate the quantization error introduced. In
 \figref{fig:qerrorradius} we can appreciate the quantization error on the radius
 and in \figref{fig:qerrorphase} the quantization error on the phase.
 
-
 \begin{figure}[htb]
 	\includegraphics[width=\textwidth]{quant_error_radius}
-	\caption{Quantization error Radius}\label{fig:qerrorradius}
+	\caption{Quantization Error Radius.}\label{fig:qerrorradius}
 \end{figure}
 \begin{figure}[htb]
 	\includegraphics[width=\textwidth]{quant_error_phase}
-	\caption{Quantization error Phase}\label{fig:qerrorphase}
+	\caption{Quantization Error Phase.}\label{fig:qerrorphase}
 \end{figure}
+
+The resulting \emph{Mean Square Errors} and \emph{Max Errors} after the
+quantization process are shown in~\eqref{eq:errorquant}. Those errors are higher
+than the ones presented in~\eqref{eq:errorfloat} since now, in addition to the
+algorithmic error of \cordic, we are adding the quantization error.
+
+\begin{equation}\label{eq:errorquant}
+	\begin{array}{rl}
+		MSE_r &= 3.4035\times10^{-9}\\
+		MSE_p &= 2.6822\times10^{-8}\\
+		MaxError_r &= 1.5315\times10^{-4}\\
+		MaxError_p &= 6.8885\times10^{-4}
+	\end{array}
+\end{equation}
